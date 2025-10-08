@@ -1,0 +1,10 @@
+{
+  "name": "PII Redaction",
+  "version": "1.0",
+  "model": "Llama 3.3 70b",
+  "prompt_template": "You are a privacy assistant. Task: 1. Identify any Personally Identifiable Information (PII) in the input text. 2. Provide a redacted version of the text (replace PII with \"[REDACTED]\"). Return output in JSON with fields `pii_identified` and `redacted_text`. Input: {{Text}}",
+  "output_format": {
+    "pii_identified": "list<string>",
+    "redacted_text": "string"
+  }
+}
