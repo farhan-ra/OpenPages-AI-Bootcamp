@@ -1,0 +1,1007 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Step‑by‑step lab to integrate an AI model to classify risk descriptions into Basel II taxonomy in OpenPages using Custom Machine Learning Models">
+      
+      
+      
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/">
+      
+      
+        <link rel="prev" href="../chapter1_prompt_basics/">
+      
+      
+        <link rel="next" href="../chapter3_advanced/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Lab: Integrating a Custom ML Model into OpenPages for Risk Taxonomy Classification - OpenPages AI Bootcamp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-integrating-a-custom-ml-model-for-risk-classification-in-openpages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenPages AI Bootcamp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab: Integrating a Custom ML Model into OpenPages for Risk Taxonomy Classification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenPages AI Bootcamp
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter1_prompt_basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Up and Deploy the prompt in Prompt Lab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-access-the-custom-machine-learning-models-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Access the Custom Machine Learning Models Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-model-access-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configure Model Access / Connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-map-the-inputs-model-openpages-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Map the Inputs (Model → OpenPages fields)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-the-outputs-and-jsonata-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Map the Outputs and JSONata Extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-user-guidance-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure User Guidance and Display
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-add-the-model-to-a-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Add the Model to a View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-the-model-in-openpages" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Test the Model in OpenPages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-troubleshooting-tips-for-your-risk-taxonomy-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-example-json-prompt-response-for-your-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Example JSON Prompt / Response for Your Taxonomy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter3_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter4_integration/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter5_governance/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Up and Deploy the prompt in Prompt Lab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-access-the-custom-machine-learning-models-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Access the Custom Machine Learning Models Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-model-access-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Configure Model Access / Connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-map-the-inputs-model-openpages-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Map the Inputs (Model → OpenPages fields)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-the-outputs-and-jsonata-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Map the Outputs and JSONata Extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-user-guidance-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure User Guidance and Display
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-add-the-model-to-a-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Add the Model to a View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-the-model-in-openpages" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Test the Model in OpenPages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-troubleshooting-tips-for-your-risk-taxonomy-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-example-json-prompt-response-for-your-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Example JSON Prompt / Response for Your Taxonomy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-integrating-a-custom-ml-model-for-risk-classification-in-openpages">Lab: Integrating a Custom ML Model for Risk Classification in OpenPages</h1>
+<p>This lab walks through how to configure and use the <em>Custom Machine Learning Models</em> feature in <strong>IBM OpenPages 9.0.0</strong> to automatically classify risk descriptions into your two‑level taxonomy.</p>
+<p>You will:</p>
+<ol>
+<li>Set up and deploy the prompt in Prompt Lab</li>
+<li>Configure a connection to your deployed model </li>
+<li>Map input fields  </li>
+<li>Map output fields and JSONata expressions  </li>
+<li>Configure user guidance  </li>
+<li>Add the model to a view  </li>
+<li>Test the integration  </li>
+</ol>
+<blockquote>
+<p><strong>Prerequisites &amp; Notes</strong><br />
+- You must have <strong>Custom Machine Learning Models</strong> permission in OpenPages, otherwise the menu is not visible. :contentReference[oaicite:0]{index=0}<br />
+- You must already have deployed your classification model (e.g. on Watson ML or another AI service). :contentReference[oaicite:1]{index=1}<br />
+- You must know the exact enum values for your OpenPages fields (Level 1 / Level 2 classification) so they match the model output.<br />
+- You should be familiar with <strong>JSONata</strong> syntax to parse model outputs. :contentReference[oaicite:2]{index=2}  </p>
+</blockquote>
+<hr />
+<h2 id="1-set-up-and-deploy-the-prompt-in-prompt-lab">1. Set Up and Deploy the prompt in Prompt Lab</h2>
+<ol>
+<li>
+<p>Create a new Prompt Lab asset in your project.
+<img alt="1_create_new_prompt_lab_asset" src="../images/1_create_new_prompt_lab_asset.png" /></p>
+</li>
+<li>
+<p>Craft your prompt, with reference to what bits of information will be comijhg from the object you want the AI feature on. Add this as a variable in the prompt.
+<img alt="2_create_new_freeform_prompt_with_variable" src="../images/2_create_new_freeform_prompt_with_variable.png" /></p>
+</li>
+<li>
+<p>Save the prompt as a prompt template.
+<img alt="3_save_prompt_template" src="../images/3_save_prompt_template.png" /></p>
+</li>
+<li>
+<p>Promote asset to deployment space.
+<img alt="4_promote_to_space" src="../images/4_promote_to_space.png" /></p>
+</li>
+<li>
+<p>Deploy asset in deployment space.
+<img alt="7_deploy_promoted_asset" src="../images/7_deploy_promoted_asset.png" /></p>
+</li>
+<li>
+<p>Note down the deployment ID. We will need this in OpenPages.
+<img alt="9_deployed_prompt_template" src="../images/9_deployed_prompt_template.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="2-access-the-custom-machine-learning-models-configuration">2. Access the Custom Machine Learning Models Configuration</h2>
+<ol>
+<li>Log in to OpenPages as an admin (with required permissions).  </li>
+<li>
+<p>From the <strong>Administration</strong> menu, go to <strong>Integrations → Custom Machine Learning Models</strong>.
+<img alt="11_navigating_to_ml_in_op" src="../images/11_navigating_to_ml_in_op.png" /></p>
+</li>
+<li>
+<p>Click <strong>New Model</strong> to begin configuring a new integration.<br />
+<img alt="12_new_ml_model_in_op" src="../images/12_new_ml_model_in_op.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="3-configure-model-access-connection">3. Configure Model Access / Connection</h2>
+<p>On the “New Model” screen:</p>
+<ul>
+<li>Enter <strong>Name</strong> and <strong>Label</strong> (e.g. <code>risk_classification</code>)  </li>
+<li>Select the <strong>AI Service Type</strong> (e.g. Watson Machine Learning on IBM Cloud)  </li>
+<li>Enter <strong>Access Parameters</strong> such as:  </li>
+<li><strong>Watson service type:</strong> <em>Watson Machine Learning on Cloud</em></li>
+<li><strong>Authentication URL:</strong> <em>https://iam.cloud.ibm.com/identity/token</em></li>
+<li><strong>API Key:</strong> Retrieve from IBM Cloud </li>
+<li><strong>Base Deployment URL:</strong> <em>https://us-south.ml.cloud.ibm.com/ml/v4</em></li>
+<li><strong>Deployment ID:</strong> Retrieve from deployment space on watsonx.ai</li>
+<li><strong>Space ID:</strong>  Retrieve from model/prompt template deployment on watsonx.ai</li>
+<li><strong>API version:</strong> <em>2021-05-01</em>  </li>
+<li>Click <strong>Test Connection</strong> to verify connectivity<br />
+<img alt="13_new_model_details" src="../images/13_new_model_details.png" /></li>
+</ul>
+<p>Generating your watsonx API key for OpenPages:
+- Go to <a href="https://cloud.ibm.com/">ibm</a>
+- Via the tool bar, go to Manage &gt; Acces (IAM)
+<img alt="14_IAM_on_IBM_Cloud" src="../images/14_IAM_on_IBM_Cloud.png" /></p>
+<ul>
+<li>
+<p>Create a new API Key that will be used for inferencing from OpenPages
+<img alt="15_create_new_api_key" src="../images/15_create_new_api_key.png" /></p>
+</li>
+<li>
+<p>Copy the new API Key to enter into the "New Model" sceen. Make sure you keep this key a secret.
+<img alt="16_copy_new_api_key" src="../images/16_copy_new_api_key.png" /></p>
+</li>
+</ul>
+<blockquote>
+<p>After entering valid details, click <strong>Next</strong> to proceed.</p>
+</blockquote>
+<hr />
+<h2 id="3-map-the-inputs-model-openpages-fields">3. Map the Inputs (Model → OpenPages fields)</h2>
+<p>On the <strong>Map Inputs</strong> page:</p>
+<ol>
+<li>
+<p>Choose the <strong>Object Type</strong> (Risk) to which this model applies.
+<img alt="17_create_new_model_configuration" src="../images/17_create_new_model_configuration.png" /></p>
+</li>
+<li>
+<p>Decide whether input is <strong>Manual</strong> or <strong>Automatic</strong> mapping.  </p>
+</li>
+<li>
+<p>Add one row per input your model expects:</p>
+</li>
+<li><strong>Model input field</strong> (must match the name used by your deployed model, e.g. <code>risk_description</code>)  </li>
+<li>Select the corresponding <strong>OpenPages field</strong> (e.g. <code>Description</code>)  </li>
+<li>
+<p>Mark whether the input is <strong>Required</strong><br />
+<img alt="18_map_inputs" src="../images/18_map_inputs.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> to move to output mapping.  </p>
+<blockquote>
+<p>(If “Next” is disabled, check that at least one input row is defined.)</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="4-map-the-outputs-and-jsonata-extraction">4. Map the Outputs and JSONata Extraction</h2>
+<p>On the <strong>Map Outputs</strong> page:</p>
+<ol>
+<li>
+<p>Select the <strong>Insight type</strong>, e.g. <code>Set fields</code> (because you want the model to populate the Level 1 / Level 2 fields)<br />
+<img alt="19_map_outputs" src="../images/19_map_outputs.png" /></p>
+</li>
+<li>
+<p>Choose whether each output is <strong>Single insight</strong> or <strong>List of insights</strong> (for your taxonomy, Single is typical) :contentReference[oaicite:3]{index=3}  </p>
+</li>
+<li>For each output you want (e.g. Level 1 classification, Level 2 classification):</li>
+<li><strong>Output label</strong> (e.g. <code>PrimaryClassification</code>, <code>SecondaryClassification</code>)  </li>
+<li>
+<p><strong>JSONata expression</strong> to extract the value from the model’s JSON response  </p>
+<ul>
+<li>Example: if model’s JSON is:<br />
+<code>json
+   {
+     "level_1_classification": "Clients Products and Business Practices",
+     "level_2_classification": "Product Flaws"
+   }</code>
+   then JSONata expressions might be:  </li>
+<li><code>level_1_classification</code>  </li>
+<li><code>level_2_classification</code>  </li>
+<li>If the response is wrapped (e.g. under <code>results.generated_text</code>), you may need <code>results.generated_text.level_1_classification</code> :contentReference[oaicite:4]{index=4}
+<img alt="10_jsonata_translation" src="../images/10_jsonata_translation.png" /> </li>
+</ul>
+</li>
+<li>
+<p>(If Insight type = Set fields) <strong>Target field</strong>: map the output to your OpenPages enumerated field  </p>
+</li>
+<li>
+<p>Optionally set <strong>Confidence score</strong> or <strong>Minimum confidence thresholds</strong> if your scenario requires filtering suggestions. :contentReference[oaicite:5]{index=5}  </p>
+</li>
+<li>(If using <code>Set fields</code>) choose whether suggestions are <strong>User set</strong> or <strong>Automatically set</strong>. :contentReference[oaicite:6]{index=6}  </li>
+<li>Click <strong>Next</strong> to proceed to guidance configuration.</li>
+</ol>
+<hr />
+<h2 id="5-configure-user-guidance-and-display">5. Configure User Guidance and Display</h2>
+<p>On the <strong>Guidance</strong> page:</p>
+<ol>
+<li>Enter a <strong>Description</strong> explaining what the model does (e.g. “This model classifies text into risk taxonomy”)  </li>
+<li>Optionally set <strong>Notification Messages</strong> or <strong>Style / display options</strong> for how users see the model’s suggestion. :contentReference[oaicite:7]{index=7}  </li>
+<li>Optional: you can embed <strong>JSONata-based conditions</strong> for alerts.  </li>
+<li>Click <strong>Save</strong> to complete model setup.  <blockquote>
+<p>The model should now appear in the Custom Machine Learning Models table with status “Complete” (or “V Complete”). :contentReference[oaicite:8]{index=8}  </p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="6-add-the-model-to-a-view">6. Add the Model to a View</h2>
+<ol>
+<li>
+<p>The AI model now must be integrated into the view of where we want to interact with it. We want this model on the <strong>Risk</strong> object so we must navigate to the relevant view. Go to any risk and then turn on debug info via the Administration Menu.<br />
+<img alt="20_display_debug_info" src="../images/20_display_debug_info.png" /></p>
+</li>
+<li>
+<p>The view will then appear beneath the risk heading. Navigate to the view to customize it by clicking on the view name. In the view designer for your object (e.g. Risk view), find the option to add the <strong>View AI insight</strong> button and drag it into the area on the view in which you want to be able to interact with it. For this use-case, we will add it to the Risk Categorisation area. 
+<img alt="21_finding_view_ai_insights" src="../images/21_finding_view_ai_insights.png" /> </p>
+</li>
+<li>
+<p>Add the relevant details to the button parameters to connect your model 
+<img alt="22_ai_button_name_and_model" src="../images/22_ai_button_name_and_model.png" /></p>
+</li>
+<li>
+<p>Save or <strong>Publish</strong> the view so the model is active in that view.
+<img alt="23_ai_insight_added_to_view" src="../images/23_ai_insight_added_to_view.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="7-test-the-model-in-openpages">7. Test the Model in OpenPages</h2>
+<ol>
+<li>
+<p>Navigate to a Risk record in the view where the model is active. </p>
+</li>
+<li>
+<p>Fill in the <strong>description</strong> (or whatever text triggers the model).  </p>
+</li>
+<li>
+<p>A <strong>lightbulb / insight icon</strong> should appear indicating the model can run (or automatically run). :contentReference[oaicite:9]{index=9}  </p>
+</li>
+<li>
+<p>Click on it and observe the <strong>side panel</strong> with model output suggestions (for Level 1 and Level 2).<br />
+<img alt="24_classify_risk_added_to_view" src="../images/24_classify_risk_added_to_view.png" /> </p>
+</li>
+</ol>
+<p><img alt="25_classify_risk_ai_insight" src="../images/25_classify_risk_ai_insight.png" /></p>
+<ol>
+<li>
+<p>Validate whether the classifications match expectations.  </p>
+</li>
+<li>
+<p>Test edge cases (no clear classification, ambiguous text) to ensure robustness.  </p>
+</li>
+</ol>
+<hr />
+<h2 id="8-troubleshooting-tips-for-your-risk-taxonomy-use-case">8. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)</h2>
+<ul>
+<li>Ensure the model prompt or API returns <strong>exact enum strings</strong> that match OpenPages enumerated values.  </li>
+<li>The JSON must be <strong>clean, valid JSON</strong> (no extra text) so JSONata evaluation succeeds.  </li>
+<li>If enum mismatches still occur, build a <strong>mapping / post‑processor</strong> between model output and OpenPages options.  </li>
+<li>Use the <strong>minimum confidence threshold</strong> to suppress low-confidence results.  </li>
+<li>Iteratively refine your prompt / model training to reduce misclassifications or “no insight found” cases.  </li>
+<li>Use <strong>Debug Info</strong> display to view raw JSON and help in refining JSONata expressions or prompt logic.</li>
+</ul>
+<hr />
+<h2 id="9-example-json-prompt-response-for-your-taxonomy">9. Example JSON Prompt / Response for Your Taxonomy</h2>
+<p>Below is a skeleton prompt and expected response format (to help you align model output with JSONata):</p>
+<p><strong>Prompt (to model):</strong></p>
+<p>```text
+You are a classifier. Given a description of a risk event, pick one Level 1 (primary) and one Level 2 (subcategory) from this taxonomy:</p>
+<p>Level 1 options:
+- Internal Fraud
+- External Fraud
+- Employment Practices and Workplace Safety
+- Clients Products and Business Practices
+- Damage to Physical Assets
+- Business Disruption and System Failures
+- Execution Delivery and Process Management</p>
+<p>Level 2 options (examples per Level 1):
+- Internal Fraud → Theft and Fraud, Unauthorized Activity<br />
+- External Fraud → Systems Security, Theft and Fraud<br />
+- Employment Practices and Workplace Safety → Employee Relations, Safe Environment, Diversity and Discrimination<br />
+- Clients Products and Business Practices → Product Flaws, Selection Sponsorship and Exposure, Improper Business or Market Practices, Suitability, Disclosures or Fiduciary, Advisory Activities<br />
+- Damage to Physical Assets → Wilful damage, Disaster and other events<br />
+- Business Disruption and System Failures → Infrastructure and Systems<br />
+- Execution Delivery and Process Management → Vendors and Suppliers, Trade Counterparties, Transaction Data Management, Customer Client Account Management, Reporting and Disclosure, Customer Intake and Documentation  </p>
+<p>Return only valid JSON in this form (no extra text):</p>
+<p>```json
+{
+  "level_1_classification": "Clients Products and Business Practices",
+  "level_2_classification": "Product Flaws"
+}</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
