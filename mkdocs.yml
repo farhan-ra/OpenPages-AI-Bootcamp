@@ -1,14 +1,11 @@
 site_name: OpenPages AI Bootcamp
-site_url: https://farhan-ra.github.io/Openpages-AI-Bootcamp
+site_url: farhan-ra.github.io/Openpages-AI-Bootcamp
 nav:
   - Home: index.md
   - Chapter 1: 
     - Overview: chapter1_prompt_basics/index.md
   - Chapter 2: 
     - Overview: chapter2_intermediate/index.md
-  - Chapter 3: chapter3_advanced/index.md
-  - Chapter 4: chapter4_integration/index.md
-  - Chapter 5: chapter5_governance/index.md
 theme:
   name: material
   palette:
