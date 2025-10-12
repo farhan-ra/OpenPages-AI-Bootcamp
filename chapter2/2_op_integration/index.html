@@ -901,15 +901,14 @@
 <p><strong>JSONata expression</strong> to extract the value from the model’s JSON response  </p>
 <ul>
 <li>Example: if model’s JSON is:<br />
-<code>json
-   {
+<code>{
      "level_1_classification": "Clients Products and Business Practices",
      "level_2_classification": "Product Flaws"
    }</code>
    then JSONata expressions might be:  </li>
 <li><code>level_1_classification</code>  </li>
 <li><code>level_2_classification</code>  </li>
-<li>If the response is wrapped (e.g. under <code>results.generated_text</code>), you may need <code>results.generated_text.level_1_classification</code> :contentReference[oaicite:4]{index=4}
+<li>If the response is wrapped (e.g. under <code>results.generated_text</code>), you may need <code>results.generated_text.level_1_classification</code> 
 <img alt="10_jsonata_translation" src="../images/10_jsonata_translation.png" /> </li>
 </ul>
 </li>
@@ -917,9 +916,9 @@
 <p>(If Insight type = Set fields) <strong>Target field</strong>: map the output to your OpenPages enumerated field  </p>
 </li>
 <li>
-<p>Optionally set <strong>Confidence score</strong> or <strong>Minimum confidence thresholds</strong> if your scenario requires filtering suggestions. :contentReference[oaicite:5]{index=5}  </p>
+<p>Optionally set <strong>Confidence score</strong> or <strong>Minimum confidence thresholds</strong> if your scenario requires filtering suggestions.</p>
 </li>
-<li>(If using <code>Set fields</code>) choose whether suggestions are <strong>User set</strong> or <strong>Automatically set</strong>. :contentReference[oaicite:6]{index=6}  </li>
+<li>(If using <code>Set fields</code>) choose whether suggestions are <strong>User set</strong> or <strong>Automatically set</strong>.   </li>
 <li>Click <strong>Next</strong> to proceed to guidance configuration.</li>
 </ol>
 <hr />
@@ -927,10 +926,10 @@
 <p>On the <strong>Guidance</strong> page:</p>
 <ol>
 <li>Enter a <strong>Description</strong> explaining what the model does (e.g. “This model classifies text into risk taxonomy”)  </li>
-<li>Optionally set <strong>Notification Messages</strong> or <strong>Style / display options</strong> for how users see the model’s suggestion. :contentReference[oaicite:7]{index=7}  </li>
+<li>Optionally set <strong>Notification Messages</strong> or <strong>Style / display options</strong> for how users see the model’s suggestion. </li>
 <li>Optional: you can embed <strong>JSONata-based conditions</strong> for alerts.  </li>
 <li>Click <strong>Save</strong> to complete model setup.  <blockquote>
-<p>The model should now appear in the Custom Machine Learning Models table with status “Complete” (or “V Complete”). :contentReference[oaicite:8]{index=8}  </p>
+<p>The model should now appear in the Custom Machine Learning Models table with status “Complete”. </p>
 </blockquote>
 </li>
 </ol>
