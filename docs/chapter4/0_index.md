@@ -1,0 +1,1 @@
+For Lab 3, please navigate to Use-case 11 here: https://community.ibm.com/community/user/discussion/watsonxai-prompt-for-openpages-examples  

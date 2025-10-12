@@ -12,7 +12,7 @@ description: "Step‑by‑step lab to integrate an AI model to classify risk des
 1. Create a new Prompt Lab asset in your project.
 ![1_create_new_prompt_lab_asset](images/1_create_new_prompt_lab_asset.png)
 
-2. Craft your prompt, with reference to what bits of information will be comijhg from the object you want the AI feature on. Add this as a variable in the prompt.
+2. Craft your prompt, with reference to what bits of information will be coming from the object you want the AI feature on. Add this as a variable in the prompt.
 ![2_create_new_freeform_prompt_with_variable](images/2_create_new_freeform_prompt_with_variable.png)
 
 3. Save the prompt as a prompt template.

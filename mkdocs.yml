@@ -5,15 +5,17 @@ nav:
   - Chapter 1: 
     - Overview: chapter1/index.md
   - Chapter 2: 
-    - Overview: chapter2/index.md
-    - Creating the model: chapter2/wxai.md
-    - Integrate the model in OpenPages: chapter2/op_integration.md
-    - Making the AI feature available in OpenPages: chapter2/view_customisation.md
+    - Overview: chapter2/0_index.md
+    - Creating the model: chapter2/1_wxai.md
+    - Integrate the model in OpenPages: chapter2/2_op_integration.md
+    - Making the AI feature available in OpenPages: chapter2/3_view_customisation.md
   - Chapter 3:
-    - Overview: chapter3/index.md
+    - Overview: chapter3/0_index.md
     - Modifying an Object in OpenPages: chapter3/1_modify_op_object.md
     - Set-up and Integrate AI Model: chapter3/2_set_up_and_integrate_ai.md
     - Execute AI in Bulk: chapter3/3_bulk_analysis.md
+  - Chapter 4:
+    - Overview: chapter4/0_index.md
 theme:
   name: material
   palette:
