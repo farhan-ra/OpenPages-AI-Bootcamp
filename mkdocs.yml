@@ -6,6 +6,9 @@ nav:
     - Overview: chapter1_prompt_basics/index.md
   - Chapter 2: 
     - Overview: chapter2_intermediate/index.md
+    - Creating the model: chapter2_intermediate/wxai.md
+    - Integrate the model in OpenPages: chapter2_intermediate/op_integration.md
+    - Making the AI feature available in OpenPages: chapter2_intermediate/view_customisation.md
 theme:
   name: material
   palette:
