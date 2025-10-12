@@ -6,32 +6,30 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Step‑by‑step lab to integrate an AI model to classify risk descriptions into Basel II taxonomy in OpenPages using Custom Machine Learning Models">
       
       
-      
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/view_customisation/">
-      
-      
-        <link rel="prev" href="../op_integration/">
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1/">
       
       
-        <link rel="next" href="../../chapter3_advanced/">
+        <link rel="prev" href="..">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../chapter2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Lab 1.3: Making the AI feature available in OpenPages - OpenPages AI Bootcamp</title>
+        <title>Overview - OpenPages AI Bootcamp</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../assets/css/custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-13-making-the-ai-feature-available-in-openpages" class="md-skip">
+        <a href="#chapter-1-prompt-foundations-openpages-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href=".." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 1.3: Making the AI feature available in OpenPages
+              Overview
             
           </span>
         </div>
@@ -190,7 +188,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href=".." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -208,7 +206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -219,74 +217,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Chapter 1
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Chapter 1
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../chapter1_prompt_basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -308,15 +238,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Chapter 2
+    Chapter 1
     
   </span>
   
@@ -324,81 +254,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Chapter 2
+            Chapter 1
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wxai/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Creating the model
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../op_integration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Integrate the model in OpenPages
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -421,7 +282,7 @@
   
   
   <span class="md-ellipsis">
-    Making the AI feature available in OpenPages
+    Overview
     
   </span>
   
@@ -434,7 +295,7 @@
   
   
   <span class="md-ellipsis">
-    Making the AI feature available in OpenPages
+    Overview
     
   </span>
   
@@ -457,36 +318,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-add-the-model-to-a-view" class="md-nav__link">
+  <a href="#11-what-is-a-prompt" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Add the Model to a View
+      1.1 What Is a Prompt?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-test-the-model-in-openpages" class="md-nav__link">
+  <a href="#12-pii-redaction-example" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Test the Model in OpenPages
+      1.2 PII Redaction Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-troubleshooting-tips-for-your-risk-taxonomy-use-case" class="md-nav__link">
+  <a href="#13-lab-pii-redaction" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)
+      1.3 Lab: PII Redaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-example-json-prompt-response-for-your-taxonomy" class="md-nav__link">
+  <a href="#14-tips-common-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Example JSON Prompt / Response for Your Taxonomy
+      1.4 Tips &amp; Common Pitfalls
     </span>
   </a>
   
@@ -496,6 +357,143 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/wxai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating the model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/op_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integrate the model in OpenPages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2/view_customisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Making the AI feature available in OpenPages
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -553,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/" class="md-nav__link">
+      <a href="../chapter3/" class="md-nav__link">
         
   
   
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/1_modify_op_object/" class="md-nav__link">
+      <a href="../chapter3/1_modify_op_object/" class="md-nav__link">
         
   
   
@@ -599,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/2_set_up_and_integrate_ai/" class="md-nav__link">
+      <a href="../chapter3/2_set_up_and_integrate_ai/" class="md-nav__link">
         
   
   
@@ -622,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/3_bulk_analysis/" class="md-nav__link">
+      <a href="../chapter3/3_bulk_analysis/" class="md-nav__link">
         
   
   
@@ -672,36 +670,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-add-the-model-to-a-view" class="md-nav__link">
+  <a href="#11-what-is-a-prompt" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Add the Model to a View
+      1.1 What Is a Prompt?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-test-the-model-in-openpages" class="md-nav__link">
+  <a href="#12-pii-redaction-example" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Test the Model in OpenPages
+      1.2 PII Redaction Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-troubleshooting-tips-for-your-risk-taxonomy-use-case" class="md-nav__link">
+  <a href="#13-lab-pii-redaction" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)
+      1.3 Lab: PII Redaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-example-json-prompt-response-for-your-taxonomy" class="md-nav__link">
+  <a href="#14-tips-common-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Example JSON Prompt / Response for Your Taxonomy
+      1.4 Tips &amp; Common Pitfalls
     </span>
   </a>
   
@@ -723,100 +721,89 @@
 
 
 
-<h1 id="lab-13-making-the-ai-feature-available-in-openpages">Lab 1.3: Making the AI feature available in OpenPages</h1>
+<h1 id="chapter-1-prompt-foundations-openpages-integration">Chapter 1: Prompt Foundations &amp; OpenPages Integration</h1>
+<p><strong>Goals:</strong><br />
+- Understand prompt engineering basics<br />
+- Run a simple PII redaction prompt<br />
+- Integrate a prompt into OpenPages via a button / UI  </p>
 <hr />
-<h2 id="1-add-the-model-to-a-view">1. Add the Model to a View</h2>
-<ol>
-<li>
-<p>The AI model now must be integrated into the view of where we want to interact with it. We want this model on the <strong>Risk</strong> object so we must navigate to the relevant view. Go to any risk and then turn on debug info via the Administration Menu.<br />
-<img alt="20_display_debug_info" src="../images/20_display_debug_info.png" /></p>
-</li>
-<li>
-<p>The view will then appear beneath the risk heading. Navigate to the view to customize it by clicking on the view name. In the view designer for your object (e.g. Risk view), find the option to add the <strong>View AI insight</strong> button and drag it into the area on the view in which you want to be able to interact with it. For this use-case, we will add it to the Risk Categorisation area. 
-<img alt="21_finding_view_ai_insights" src="../images/21_finding_view_ai_insights.png" /> </p>
-</li>
-<li>
-<p>Add the relevant details to the button parameters to connect your model 
-<img alt="22_ai_button_name_and_model" src="../images/22_ai_button_name_and_model.png" /></p>
-</li>
-<li>
-<p>Save or <strong>Publish</strong> the view so the model is active in that view.
-<img alt="23_ai_insight_added_to_view" src="../images/23_ai_insight_added_to_view.png" /></p>
-</li>
-</ol>
-<hr />
-<h2 id="2-test-the-model-in-openpages">2. Test the Model in OpenPages</h2>
-<ol>
-<li>
-<p>Navigate to a Risk record in the view where the model is active. </p>
-</li>
-<li>
-<p>Fill in the <strong>description</strong> (or whatever text triggers the model).  </p>
-</li>
-<li>
-<p>A <strong>lightbulb / insight icon</strong> should appear indicating the model can run (or automatically run). :contentReference[oaicite:9]{index=9}  </p>
-</li>
-<li>
-<p>Click on it and observe the <strong>side panel</strong> with model output suggestions (for Level 1 and Level 2).<br />
-<img alt="24_classify_risk_added_to_view" src="../images/24_classify_risk_added_to_view.png" /> </p>
-</li>
-</ol>
-<p><img alt="25_classify_risk_ai_insight" src="../images/25_classify_risk_ai_insight.png" /></p>
-<ol>
-<li>
-<p>Validate whether the classifications match expectations.  </p>
-</li>
-<li>
-<p>Test edge cases (no clear classification, ambiguous text) to ensure robustness.  </p>
-</li>
-</ol>
-<hr />
-<h2 id="3-troubleshooting-tips-for-your-risk-taxonomy-use-case">3. Troubleshooting &amp; Tips (for Your Risk Taxonomy Use Case)</h2>
+<h2 id="11-what-is-a-prompt">1.1 What Is a Prompt?</h2>
+<p>A <strong>prompt</strong> is a textual instruction (plus context and variables) you send to a foundation model to elicit desired output.<br />
+A well‑designed prompt includes:</p>
 <ul>
-<li>Ensure the model prompt or API returns <strong>exact enum strings</strong> that match OpenPages enumerated values.  </li>
-<li>The JSON must be <strong>clean, valid JSON</strong> (no extra text) so JSONata evaluation succeeds.  </li>
-<li>If enum mismatches still occur, build a <strong>mapping / post‑processor</strong> between model output and OpenPages options.  </li>
-<li>Use the <strong>minimum confidence threshold</strong> to suppress low-confidence results.  </li>
-<li>Iteratively refine your prompt / model training to reduce misclassifications or “no insight found” cases.  </li>
-<li>Use <strong>Debug Info</strong> display to view raw JSON and help in refining JSONata expressions or prompt logic.</li>
+<li>Context / system instructions  </li>
+<li>Clear task instructions  </li>
+<li>Variable placeholders (e.g. <code>{{Text}}</code>)  </li>
+<li>Output format constraints (e.g. JSON schema, headings)  </li>
+<li>Error / fallback handling  </li>
 </ul>
 <hr />
-<h2 id="4-example-json-prompt-response-for-your-taxonomy">4. Example JSON Prompt / Response for Your Taxonomy</h2>
-<p>Below is a skeleton prompt and expected response format (to help you align model output with JSONata):</p>
-<p><strong>Prompt (to model):</strong></p>
-<p>```text
-You are a classifier. Given a description of a risk event, pick one Level 1 (primary) and one Level 2 (subcategory) from this taxonomy:</p>
-<p>Level 1 options:
-- Internal Fraud
-- External Fraud
-- Employment Practices and Workplace Safety
-- Clients Products and Business Practices
-- Damage to Physical Assets
-- Business Disruption and System Failures
-- Execution Delivery and Process Management</p>
-<p>Level 2 options (examples per Level 1):
-- Internal Fraud → Theft and Fraud, Unauthorized Activity<br />
-- External Fraud → Systems Security, Theft and Fraud<br />
-- Employment Practices and Workplace Safety → Employee Relations, Safe Environment, Diversity and Discrimination<br />
-- Clients Products and Business Practices → Product Flaws, Selection Sponsorship and Exposure, Improper Business or Market Practices, Suitability, Disclosures or Fiduciary, Advisory Activities<br />
-- Damage to Physical Assets → Wilful damage, Disaster and other events<br />
-- Business Disruption and System Failures → Infrastructure and Systems<br />
-- Execution Delivery and Process Management → Vendors and Suppliers, Trade Counterparties, Transaction Data Management, Customer Client Account Management, Reporting and Disclosure, Customer Intake and Documentation  </p>
-<p>Return only valid JSON in this form (no extra text):</p>
-<p>```json
+<h2 id="12-pii-redaction-example">1.2 PII Redaction Example</h2>
+<p>We’ll start with a worked prompt: <strong>PII Detection &amp; Redaction</strong><br />
+You can find the canonical prompt in <a href="../../prompts/pii_redaction.json"><code>prompts/pii_redaction.json</code></a></p>
+<p><strong>Prompt Template (excerpt):</strong></p>
+<blockquote>
+<p><code>``text
+You are a privacy assistant.  
+Task:  
+1. Identify any Personally Identifiable Information (PII) in the input text.  
+2. Provide a redacted version of the text (replace PII with “[REDACTED]”).  
+3. Return output in **JSON** format with fields:  
+   -</code>pii_identified<code>(list of strings)  
+   -</code>redacted_text` (string)  </p>
+<p>Input:<br />
+{{Text}}  </p>
+<p>Output:<br />
+<code>json
 {
-  "level_1_classification": "Clients Products and Business Practices",
-  "level_2_classification": "Product Flaws"
-}</p>
+  "pii_identified": [...],
+  "redacted_text": "..."
+}</code>
+```  </p>
+</blockquote>
+<p>You can test this prompt in your prompt playground (e.g. via watsonx prompt client), feeding an input text.</p>
+<p><strong>Sample input / output:</strong></p>
+<ul>
+<li>Input (in <code>examples/inputs/example_text_pii.txt</code>)  </li>
+<li>Expected output in <code>examples/outputs/example_pii_redacted.json</code>  </li>
+</ul>
+<hr />
+<h2 id="13-lab-pii-redaction">1.3 Lab: PII Redaction</h2>
+<p>Goal: wire up the prompt, run it, and integrate into OpenPages sandbox.</p>
+<ol>
+<li>Copy the prompt template from <code>prompts/pii_redaction.json</code>  </li>
+<li>In your prompt client or notebook, substitute <code>{{Text}}</code> with a sample input  </li>
+<li>Execute and verify you get output matching the schema  </li>
+<li>
+<p>Using JSONata (or your mapping tool in OpenPages), extract the fields:</p>
+</li>
+<li>
+<p><code>pii_identified</code> → list  </p>
+</li>
+<li><code>redacted_text</code> → string  </li>
+</ol>
+<p>e.g. JSONata expression:<br />
+    $eval(results.generated_text).pii_identified</p>
+<ol>
+<li>In the OpenPages sandbox, configure a button (or UI) that passes the record description to the prompt, receives output, and writes back results to designated fields  </li>
+<li>Test a few edge cases (text with no PII, multiple PII types, partial overlap)  </li>
+</ol>
+<hr />
+<h2 id="14-tips-common-pitfalls">1.4 Tips &amp; Common Pitfalls</h2>
+<ul>
+<li>Always constrain the output (e.g. “output <strong>only</strong> JSON”) to avoid extra prose.  </li>
+<li>Use stop sequences to prevent trailing tokens.  </li>
+<li>For edge cases, include fallback text (“If no PII found, return <code>pii_identified: []</code>).  </li>
+<li>Validate the output format before writing back into systems.</li>
+</ul>
+<hr />
+<p>At the end you could also include links: “Proceed to Chapter 2 → Summarization &amp; Tagging.”</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -859,10 +846,10 @@ You are a classifier. Given a description of a risk event, pick one Level 1 (p
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

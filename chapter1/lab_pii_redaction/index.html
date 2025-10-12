@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1_prompt_basics/">
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1/lab_pii_redaction/">
       
       
-        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../chapter2_intermediate/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Overview - OpenPages AI Bootcamp</title>
+        <title>Lab: PII Redaction Prompt - OpenPages AI Bootcamp</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/css/custom.css">
+      <link rel="stylesheet" href="../../assets/css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-1-prompt-foundations-openpages-integration" class="md-skip">
+        <a href="#lab-pii-redaction-prompt" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href="../.." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Lab: PII Redaction Prompt
             
           </span>
         </div>
@@ -188,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href="../.." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -206,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -225,20 +221,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -254,7 +248,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Chapter 1
@@ -265,32 +259,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -301,62 +273,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#11-what-is-a-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 What Is a Prompt?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-pii-redaction-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 PII Redaction Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-lab-pii-redaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 Lab: PII Redaction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-tips-common-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4 Tips &amp; Common Pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -414,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/" class="md-nav__link">
+      <a href="../../chapter2/" class="md-nav__link">
         
   
   
@@ -437,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/wxai/" class="md-nav__link">
+      <a href="../../chapter2/wxai/" class="md-nav__link">
         
   
   
@@ -460,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/op_integration/" class="md-nav__link">
+      <a href="../../chapter2/op_integration/" class="md-nav__link">
         
   
   
@@ -483,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/view_customisation/" class="md-nav__link">
+      <a href="../../chapter2/view_customisation/" class="md-nav__link">
         
   
   
@@ -551,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter3_advanced/" class="md-nav__link">
+      <a href="../../chapter3/" class="md-nav__link">
         
   
   
@@ -574,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter3_advanced/1_modify_op_object/" class="md-nav__link">
+      <a href="../../chapter3/1_modify_op_object/" class="md-nav__link">
         
   
   
@@ -597,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter3_advanced/2_set_up_and_integrate_ai/" class="md-nav__link">
+      <a href="../../chapter3/2_set_up_and_integrate_ai/" class="md-nav__link">
         
   
   
@@ -620,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter3_advanced/3_bulk_analysis/" class="md-nav__link">
+      <a href="../../chapter3/3_bulk_analysis/" class="md-nav__link">
         
   
   
@@ -670,36 +586,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-what-is-a-prompt" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 What Is a Prompt?
+      Objective
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-pii-redaction-example" class="md-nav__link">
+  <a href="#steps" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 PII Redaction Example
+      Steps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-lab-pii-redaction" class="md-nav__link">
+  <a href="#extension-tasks" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 Lab: PII Redaction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-tips-common-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4 Tips &amp; Common Pitfalls
+      Extension Tasks
     </span>
   </a>
   
@@ -721,83 +628,33 @@
 
 
 
-<h1 id="chapter-1-prompt-foundations-openpages-integration">Chapter 1: Prompt Foundations &amp; OpenPages Integration</h1>
-<p><strong>Goals:</strong><br />
-- Understand prompt engineering basics<br />
-- Run a simple PII redaction prompt<br />
-- Integrate a prompt into OpenPages via a button / UI  </p>
+<h1 id="lab-pii-redaction-prompt">Lab: PII Redaction Prompt</h1>
+<h2 id="objective">Objective</h2>
+<p>Implement the PII redaction prompt, run it, parse results, and integrate with OpenPages UI.</p>
 <hr />
-<h2 id="11-what-is-a-prompt">1.1 What Is a Prompt?</h2>
-<p>A <strong>prompt</strong> is a textual instruction (plus context and variables) you send to a foundation model to elicit desired output.<br />
-A well‑designed prompt includes:</p>
-<ul>
-<li>Context / system instructions  </li>
-<li>Clear task instructions  </li>
-<li>Variable placeholders (e.g. <code>{{Text}}</code>)  </li>
-<li>Output format constraints (e.g. JSON schema, headings)  </li>
-<li>Error / fallback handling  </li>
-</ul>
-<hr />
-<h2 id="12-pii-redaction-example">1.2 PII Redaction Example</h2>
-<p>We’ll start with a worked prompt: <strong>PII Detection &amp; Redaction</strong><br />
-You can find the canonical prompt in <a href="../../prompts/pii_redaction.json"><code>prompts/pii_redaction.json</code></a></p>
-<p><strong>Prompt Template (excerpt):</strong></p>
-<blockquote>
-<p><code>``text
-You are a privacy assistant.  
-Task:  
-1. Identify any Personally Identifiable Information (PII) in the input text.  
-2. Provide a redacted version of the text (replace PII with “[REDACTED]”).  
-3. Return output in **JSON** format with fields:  
-   -</code>pii_identified<code>(list of strings)  
-   -</code>redacted_text` (string)  </p>
-<p>Input:<br />
-{{Text}}  </p>
-<p>Output:<br />
-<code>json
-{
-  "pii_identified": [...],
-  "redacted_text": "..."
-}</code>
-```  </p>
-</blockquote>
-<p>You can test this prompt in your prompt playground (e.g. via watsonx prompt client), feeding an input text.</p>
-<p><strong>Sample input / output:</strong></p>
-<ul>
-<li>Input (in <code>examples/inputs/example_text_pii.txt</code>)  </li>
-<li>Expected output in <code>examples/outputs/example_pii_redacted.json</code>  </li>
-</ul>
-<hr />
-<h2 id="13-lab-pii-redaction">1.3 Lab: PII Redaction</h2>
-<p>Goal: wire up the prompt, run it, and integrate into OpenPages sandbox.</p>
+<h2 id="steps">Steps</h2>
 <ol>
-<li>Copy the prompt template from <code>prompts/pii_redaction.json</code>  </li>
-<li>In your prompt client or notebook, substitute <code>{{Text}}</code> with a sample input  </li>
-<li>Execute and verify you get output matching the schema  </li>
-<li>
-<p>Using JSONata (or your mapping tool in OpenPages), extract the fields:</p>
-</li>
-<li>
-<p><code>pii_identified</code> → list  </p>
-</li>
-<li><code>redacted_text</code> → string  </li>
-</ol>
-<p>e.g. JSONata expression:<br />
-    $eval(results.generated_text).pii_identified</p>
-<ol>
-<li>In the OpenPages sandbox, configure a button (or UI) that passes the record description to the prompt, receives output, and writes back results to designated fields  </li>
-<li>Test a few edge cases (text with no PII, multiple PII types, partial overlap)  </li>
+<li>Open the prompt template: <code>prompts/pii_redaction.json</code>  </li>
+<li>Load the example input: <code>examples/inputs/example_text_pii.txt</code>  </li>
+<li>Replace placeholder <code>{{Text}}</code> with the example input  </li>
+<li>Run the prompt in your prompt client (or notebook)  </li>
+<li>Inspect returned JSON, compare against <code>examples/outputs/example_pii_redacted.json</code>  </li>
+<li>Use JSONata or mapping logic to extract <code>pii_identified</code> and <code>redacted_text</code>  </li>
+<li>Inside OpenPages sandbox, create a UI component (e.g. a button) that:</li>
+<li>Takes the record’s relevant text  </li>
+<li>Sends it to the prompt  </li>
+<li>Parses returned JSON  </li>
+<li>Updates record fields (e.g. <code>piiList</code>, <code>redactedDescription</code>)  </li>
+<li>Test with multiple input variations  </li>
+<li>Document any mis‑parses or format errors  </li>
 </ol>
 <hr />
-<h2 id="14-tips-common-pitfalls">1.4 Tips &amp; Common Pitfalls</h2>
+<h2 id="extension-tasks">Extension Tasks</h2>
 <ul>
-<li>Always constrain the output (e.g. “output <strong>only</strong> JSON”) to avoid extra prose.  </li>
-<li>Use stop sequences to prevent trailing tokens.  </li>
-<li>For edge cases, include fallback text (“If no PII found, return <code>pii_identified: []</code>).  </li>
-<li>Validate the output format before writing back into systems.</li>
+<li>Modify the prompt to also return the character indexes (start/end) of each PII occurrence  </li>
+<li>Add optional types (e.g. “Phone number,” “Email”) and group by type  </li>
+<li>Add a fallback clause: if no PII detected, return an empty list (don’t error)</li>
 </ul>
-<hr />
-<p>At the end you could also include links: “Proceed to Chapter 2 → Summarization &amp; Tagging.”</p>
 
 
 
@@ -846,10 +703,10 @@ Task:
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
