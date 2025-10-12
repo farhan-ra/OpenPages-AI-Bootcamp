@@ -1,0 +1,11 @@
+/* Default image state */
+img {
+  transition: transform 0.3s ease;
+}
+
+/* Zoom in on hover */
+img:hover {
+  transform: scale(1.5); /* Adjust as needed */
+  z-index: 10;
+  position: relative;
+}

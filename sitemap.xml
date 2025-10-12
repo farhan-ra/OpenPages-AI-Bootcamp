@@ -2,26 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-12</lastmod>
     </url>
     <url>
          <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1_prompt_basics/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-12</lastmod>
     </url>
     <url>
          <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1_prompt_basics/lab_pii_redaction/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-12</lastmod>
     </url>
     <url>
          <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-12</lastmod>
     </url>
     <url>
-         <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/lab_classification/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/op_integration/</loc>
+         <lastmod>2025-10-12</lastmod>
+    </url>
+    <url>
+         <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/view_customisation/</loc>
+         <lastmod>2025-10-12</lastmod>
+    </url>
+    <url>
+         <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/wxai/</loc>
+         <lastmod>2025-10-12</lastmod>
     </url>
     <url>
          <loc>https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter3_advanced/</loc>
-         <lastmod>2025-10-10</lastmod>
+         <lastmod>2025-10-12</lastmod>
     </url>
 </urlset>

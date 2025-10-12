@@ -6,26 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-      
-      
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter3_advanced/">
-      
+        <meta name="description" content="Step‑by‑step lab to integrate an AI model to classify risk descriptions into Basel II taxonomy in OpenPages using Custom Machine Learning Models">
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2_intermediate/wxai/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../op_integration/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Index - OpenPages AI Bootcamp</title>
+        <title>Lab 1.1: Creating and deploying the model in watsonx.ai - OpenPages AI Bootcamp</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/css/custom.css">
+      <link rel="stylesheet" href="../../assets/css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lab-11-creating-and-deploying-a-model-in-watsonxai" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href="../.." title="OpenPages AI Bootcamp" class="md-header__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Lab 1.1: Creating and deploying the model in watsonx.ai
             
           </span>
         </div>
@@ -179,7 +190,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
+    <a href="../.." title="OpenPages AI Bootcamp" class="md-nav__button md-logo" aria-label="OpenPages AI Bootcamp" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -197,7 +208,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -257,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter1_prompt_basics/" class="md-nav__link">
+      <a href="../../chapter1_prompt_basics/" class="md-nav__link">
         
   
   
@@ -284,18 +295,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -311,7 +324,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Chapter 2
@@ -325,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -345,10 +358,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter2_intermediate/wxai/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Creating the model
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -359,6 +394,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Up and Deploy the prompt in Prompt Lab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -371,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/op_integration/" class="md-nav__link">
+      <a href="../op_integration/" class="md-nav__link">
         
   
   
@@ -394,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter2_intermediate/view_customisation/" class="md-nav__link">
+      <a href="../view_customisation/" class="md-nav__link">
         
   
   
@@ -434,6 +498,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Up and Deploy the prompt in Prompt Lab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -449,7 +532,35 @@
 
 
 
-  <h1>Index</h1>
+<h1 id="lab-11-creating-and-deploying-a-model-in-watsonxai">Lab 1.1: Creating and Deploying a model in watsonx.ai</h1>
+<hr />
+<h2 id="1-set-up-and-deploy-the-prompt-in-prompt-lab">1. Set Up and Deploy the prompt in Prompt Lab</h2>
+<ol>
+<li>
+<p>Create a new Prompt Lab asset in your project.
+<img alt="1_create_new_prompt_lab_asset" src="../../images/1_create_new_prompt_lab_asset.png" /></p>
+</li>
+<li>
+<p>Craft your prompt, with reference to what bits of information will be comijhg from the object you want the AI feature on. Add this as a variable in the prompt.
+<img alt="2_create_new_freeform_prompt_with_variable" src="../../images/2_create_new_freeform_prompt_with_variable.png" /></p>
+</li>
+<li>
+<p>Save the prompt as a prompt template.
+<img alt="3_save_prompt_template" src="../../images/3_save_prompt_template.png" /></p>
+</li>
+<li>
+<p>Promote asset to deployment space.
+<img alt="4_promote_to_space" src="../../images/4_promote_to_space.png" /></p>
+</li>
+<li>
+<p>Deploy asset in deployment space.
+<img alt="7_deploy_promoted_asset" src="../../images/7_deploy_promoted_asset.png" /></p>
+</li>
+<li>
+<p>Note down the deployment ID. We will need this in OpenPages.
+<img alt="9_deployed_prompt_template" src="../../images/9_deployed_prompt_template.png" /></p>
+</li>
+</ol>
 
 
 
@@ -457,7 +568,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -500,10 +612,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
