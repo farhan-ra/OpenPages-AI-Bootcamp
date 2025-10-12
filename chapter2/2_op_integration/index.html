@@ -6,11 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Step‑by‑step lab to integrate an AI model to classify risk descriptions into Basel II taxonomy in OpenPages using Custom Machine Learning Models">
       
       
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1/lab_pii_redaction/">
+      
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2/2_op_integration/">
       
       
+        <link rel="prev" href="../1_wxai/">
+      
+      
+        <link rel="next" href="../3_view_customisation/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +24,7 @@
     
     
       
-        <title>Lab: PII Redaction Prompt - OpenPages AI Bootcamp</title>
+        <title>Lab 1.2: Integrate the model in OpenPages - OpenPages AI Bootcamp</title>
       
     
     
@@ -70,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-pii-redaction-prompt" class="md-skip">
+        <a href="#lab-12-integrate-the-model-in-openpages" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab: PII Redaction Prompt
+              Lab 1.2: Integrate the model in OpenPages
             
           </span>
         </div>
@@ -262,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../chapter1/" class="md-nav__link">
         
   
   
@@ -289,18 +295,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -316,7 +324,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Chapter 2
@@ -330,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter2/" class="md-nav__link">
+      <a href="../0_index/" class="md-nav__link">
         
   
   
@@ -353,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter2/wxai/" class="md-nav__link">
+      <a href="../1_wxai/" class="md-nav__link">
         
   
   
@@ -373,10 +381,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../chapter2/op_integration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Integrate the model in OpenPages
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -387,6 +417,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-access-the-custom-machine-learning-models-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Access the Custom Machine Learning Models Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configure-model-access-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Configure Model Access / Connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-map-the-inputs-model-openpages-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Map the Inputs (Model → OpenPages fields)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-the-outputs-and-jsonata-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Map the Outputs and JSONata Extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-user-guidance-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure User Guidance and Display
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -399,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter2/view_customisation/" class="md-nav__link">
+      <a href="../3_view_customisation/" class="md-nav__link">
         
   
   
@@ -467,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3/" class="md-nav__link">
+      <a href="../../chapter3/0_index/" class="md-nav__link">
         
   
   
@@ -559,6 +654,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter4/0_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -586,27 +749,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
+  <a href="#1-access-the-custom-machine-learning-models-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Objective
+      1. Access the Custom Machine Learning Models Configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
+  <a href="#2-configure-model-access-connection" class="md-nav__link">
     <span class="md-ellipsis">
-      Steps
+      2. Configure Model Access / Connection
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-tasks" class="md-nav__link">
+  <a href="#3-map-the-inputs-model-openpages-fields" class="md-nav__link">
     <span class="md-ellipsis">
-      Extension Tasks
+      3. Map the Inputs (Model → OpenPages fields)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-map-the-outputs-and-jsonata-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Map the Outputs and JSONata Extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-user-guidance-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure User Guidance and Display
     </span>
   </a>
   
@@ -628,39 +809,140 @@
 
 
 
-<h1 id="lab-pii-redaction-prompt">Lab: PII Redaction Prompt</h1>
-<h2 id="objective">Objective</h2>
-<p>Implement the PII redaction prompt, run it, parse results, and integrate with OpenPages UI.</p>
+<h1 id="lab-12-integrate-the-model-in-openpages">Lab 1.2: Integrate the model in OpenPages</h1>
 <hr />
-<h2 id="steps">Steps</h2>
+<h2 id="1-access-the-custom-machine-learning-models-configuration">1. Access the Custom Machine Learning Models Configuration</h2>
 <ol>
-<li>Open the prompt template: <code>prompts/pii_redaction.json</code>  </li>
-<li>Load the example input: <code>examples/inputs/example_text_pii.txt</code>  </li>
-<li>Replace placeholder <code>{{Text}}</code> with the example input  </li>
-<li>Run the prompt in your prompt client (or notebook)  </li>
-<li>Inspect returned JSON, compare against <code>examples/outputs/example_pii_redacted.json</code>  </li>
-<li>Use JSONata or mapping logic to extract <code>pii_identified</code> and <code>redacted_text</code>  </li>
-<li>Inside OpenPages sandbox, create a UI component (e.g. a button) that:</li>
-<li>Takes the record’s relevant text  </li>
-<li>Sends it to the prompt  </li>
-<li>Parses returned JSON  </li>
-<li>Updates record fields (e.g. <code>piiList</code>, <code>redactedDescription</code>)  </li>
-<li>Test with multiple input variations  </li>
-<li>Document any mis‑parses or format errors  </li>
+<li>Log in to OpenPages as an admin (with required permissions).  </li>
+<li>
+<p>From the <strong>Administration</strong> menu, go to <strong>Integrations → Custom Machine Learning Models</strong>.
+<img alt="11_navigating_to_ml_in_op" src="../images/11_navigating_to_ml_in_op.png" /></p>
+</li>
+<li>
+<p>Click <strong>New Model</strong> to begin configuring a new integration.<br />
+<img alt="12_new_ml_model_in_op" src="../images/12_new_ml_model_in_op.png" /></p>
+</li>
 </ol>
 <hr />
-<h2 id="extension-tasks">Extension Tasks</h2>
+<h2 id="2-configure-model-access-connection">2. Configure Model Access / Connection</h2>
+<p>On the “New Model” screen:</p>
 <ul>
-<li>Modify the prompt to also return the character indexes (start/end) of each PII occurrence  </li>
-<li>Add optional types (e.g. “Phone number,” “Email”) and group by type  </li>
-<li>Add a fallback clause: if no PII detected, return an empty list (don’t error)</li>
+<li>Enter <strong>Name</strong> and <strong>Label</strong> (e.g. <code>risk_classification</code>)  </li>
+<li>Select the <strong>AI Service Type</strong> (e.g. Watson Machine Learning on IBM Cloud)  </li>
+<li>Enter <strong>Access Parameters</strong> such as:  </li>
+<li><strong>Watson service type:</strong> <code>Watson Machine Learning on Cloud</code></li>
+<li><strong>Authentication URL:</strong> <code>https://iam.cloud.ibm.com/identity/token</code></li>
+<li><strong>API Key:</strong> Retrieve from IBM Cloud </li>
+<li><strong>Base Deployment URL:</strong> <code>https://us-south.ml.cloud.ibm.com/ml/v4</code></li>
+<li><strong>Deployment ID:</strong> Retrieve from deployment space on watsonx.ai</li>
+<li><strong>Space ID:</strong>  Retrieve from model/prompt template deployment on watsonx.ai</li>
+<li><strong>API version:</strong> <code>2021-05-01</code>  </li>
+<li>Click <strong>Test Connection</strong> to verify connectivity<br />
+<img alt="13_new_model_details" src="../images/13_new_model_details.png" /></li>
 </ul>
+<p>Generating your watsonx API key for OpenPages:
+- Go to <a href="https://cloud.ibm.com/">ibm</a>
+- Via the tool bar, go to Manage &gt; Acces (IAM)
+<img alt="14_IAM_on_IBM_Cloud" src="../images/14_IAM_on_IBM_Cloud.png" /></p>
+<ul>
+<li>
+<p>Create a new API Key that will be used for inferencing from OpenPages
+<img alt="15_create_new_api_key" src="../images/15_create_new_api_key.png" /></p>
+</li>
+<li>
+<p>Copy the new API Key to enter into the "New Model" sceen. Make sure you keep this key a secret.
+<img alt="16_copy_new_api_key" src="../images/16_copy_new_api_key.png" /></p>
+</li>
+</ul>
+<blockquote>
+<p>After entering valid details, click <strong>Next</strong> to proceed.</p>
+</blockquote>
+<hr />
+<h2 id="3-map-the-inputs-model-openpages-fields">3. Map the Inputs (Model → OpenPages fields)</h2>
+<p>On the <strong>Map Inputs</strong> page:</p>
+<ol>
+<li>
+<p>Choose the <strong>Object Type</strong> (Risk) to which this model applies.
+<img alt="17_create_new_model_configuration" src="../images/17_create_new_model_configuration.png" /></p>
+</li>
+<li>
+<p>Decide whether input is <strong>Manual</strong> or <strong>Automatic</strong> mapping.  </p>
+</li>
+<li>
+<p>Add one row per input your model expects:</p>
+</li>
+<li><strong>Model input field</strong> (must match the name used by your deployed model, e.g. <code>risk_description</code>)  </li>
+<li>Select the corresponding <strong>OpenPages field</strong> (e.g. <code>Description</code>)  </li>
+<li>
+<p>Mark whether the input is <strong>Required</strong><br />
+<img alt="18_map_inputs" src="../images/18_map_inputs.png" /></p>
+</li>
+<li>
+<p>Click <strong>Next</strong> to move to output mapping.  </p>
+<blockquote>
+<p>(If “Next” is disabled, check that at least one input row is defined.)</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="4-map-the-outputs-and-jsonata-extraction">4. Map the Outputs and JSONata Extraction</h2>
+<p>On the <strong>Map Outputs</strong> page:</p>
+<ol>
+<li>
+<p>Select the <strong>Insight type</strong>, e.g. <code>Set fields</code> (because you want the model to populate the Level 1 / Level 2 fields)<br />
+<img alt="19_map_outputs" src="../images/19_map_outputs.png" /></p>
+</li>
+<li>
+<p>Choose whether each output is <strong>Single insight</strong> or <strong>List of insights</strong> (for your taxonomy, Single is typical) :contentReference[oaicite:3]{index=3}  </p>
+</li>
+<li>For each output you want (e.g. Level 1 classification, Level 2 classification):</li>
+<li><strong>Output label</strong> (e.g. <code>PrimaryClassification</code>, <code>SecondaryClassification</code>)  </li>
+<li>
+<p><strong>JSONata expression</strong> to extract the value from the model’s JSON response  </p>
+<ul>
+<li>Example: if model’s JSON is:<br />
+<code>json
+   {
+     "level_1_classification": "Clients Products and Business Practices",
+     "level_2_classification": "Product Flaws"
+   }</code>
+   then JSONata expressions might be:  </li>
+<li><code>level_1_classification</code>  </li>
+<li><code>level_2_classification</code>  </li>
+<li>If the response is wrapped (e.g. under <code>results.generated_text</code>), you may need <code>results.generated_text.level_1_classification</code> :contentReference[oaicite:4]{index=4}
+<img alt="10_jsonata_translation" src="../images/10_jsonata_translation.png" /> </li>
+</ul>
+</li>
+<li>
+<p>(If Insight type = Set fields) <strong>Target field</strong>: map the output to your OpenPages enumerated field  </p>
+</li>
+<li>
+<p>Optionally set <strong>Confidence score</strong> or <strong>Minimum confidence thresholds</strong> if your scenario requires filtering suggestions. :contentReference[oaicite:5]{index=5}  </p>
+</li>
+<li>(If using <code>Set fields</code>) choose whether suggestions are <strong>User set</strong> or <strong>Automatically set</strong>. :contentReference[oaicite:6]{index=6}  </li>
+<li>Click <strong>Next</strong> to proceed to guidance configuration.</li>
+</ol>
+<hr />
+<h2 id="5-configure-user-guidance-and-display">5. Configure User Guidance and Display</h2>
+<p>On the <strong>Guidance</strong> page:</p>
+<ol>
+<li>Enter a <strong>Description</strong> explaining what the model does (e.g. “This model classifies text into risk taxonomy”)  </li>
+<li>Optionally set <strong>Notification Messages</strong> or <strong>Style / display options</strong> for how users see the model’s suggestion. :contentReference[oaicite:7]{index=7}  </li>
+<li>Optional: you can embed <strong>JSONata-based conditions</strong> for alerts.  </li>
+<li>Click <strong>Save</strong> to complete model setup.  <blockquote>
+<p>The model should now appear in the Custom Machine Learning Models table with status “Complete” (or “V Complete”). :contentReference[oaicite:8]{index=8}  </p>
+</blockquote>
+</li>
+</ol>
 
 
 
 
 
 
+
+  
+  
 
 
 

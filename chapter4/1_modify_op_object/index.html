@@ -6,17 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Step‑by‑step lab to integrate an AI model to classify risk descriptions into Basel II taxonomy in OpenPages using Custom Machine Learning Models">
       
       
-      
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter2/wxai/">
-      
-      
-        <link rel="prev" href="../">
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter4/1_modify_op_object/">
       
       
-        <link rel="next" href="../op_integration/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +18,7 @@
     
     
       
-        <title>Lab 1.1: Creating and deploying the model in watsonx.ai - OpenPages AI Bootcamp</title>
+        <title>Lab 2.1: Modifying an Object in OpenPages - OpenPages AI Bootcamp</title>
       
     
     
@@ -76,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-11-creating-and-deploying-a-model-in-watsonxai" class="md-skip">
+        <a href="#lab-21-modifying-an-object-in-openpages" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 1.1: Creating and deploying the model in watsonx.ai
+              Lab 2.1: Modifying an Object in OpenPages
             
           </span>
         </div>
@@ -295,20 +289,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -324,7 +316,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Chapter 2
@@ -338,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../chapter2/0_index/" class="md-nav__link">
         
   
   
@@ -358,32 +350,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Creating the model
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../chapter2/1_wxai/" class="md-nav__link">
         
   
   
@@ -394,35 +364,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set Up and Deploy the prompt in Prompt Lab
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -435,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../op_integration/" class="md-nav__link">
+      <a href="../../chapter2/2_op_integration/" class="md-nav__link">
         
   
   
@@ -458,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../view_customisation/" class="md-nav__link">
+      <a href="../../chapter2/3_view_customisation/" class="md-nav__link">
         
   
   
@@ -526,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3/" class="md-nav__link">
+      <a href="../../chapter3/0_index/" class="md-nav__link">
         
   
   
@@ -618,6 +559,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -645,9 +654,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-set-up-and-deploy-the-prompt-in-prompt-lab" class="md-nav__link">
+  <a href="#1-adding-object-fields-to-relevant-object-type" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Set Up and Deploy the prompt in Prompt Lab
+      1. Adding Object Fields to Relevant Object Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-the-new-object-fields-to-the-control-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Adding the New Object Fields to the Control View
     </span>
   </a>
   
@@ -669,33 +687,48 @@
 
 
 
-<h1 id="lab-11-creating-and-deploying-a-model-in-watsonxai">Lab 1.1: Creating and Deploying a model in watsonx.ai</h1>
+<h1 id="lab-21-modifying-an-object-in-openpages">Lab 2.1: Modifying an Object in OpenPages</h1>
+<p>In order to display the AI results, we need to modify the relevant OpenPages object, <strong>Control</strong>, to add fields pertaining to the results we want to see. </p>
 <hr />
-<h2 id="1-set-up-and-deploy-the-prompt-in-prompt-lab">1. Set Up and Deploy the prompt in Prompt Lab</h2>
+<h2 id="1-adding-object-fields-to-relevant-object-type">1. Adding Object Fields to Relevant Object Type</h2>
 <ol>
 <li>
-<p>Create a new Prompt Lab asset in your project.
-<img alt="1_create_new_prompt_lab_asset" src="../images/1_create_new_prompt_lab_asset.png" /></p>
+<p>From the <strong>Administration</strong> menu, go to <strong>Solution Configuration → Object</strong> </p>
 </li>
 <li>
-<p>Craft your prompt, with reference to what bits of information will be comijhg from the object you want the AI feature on. Add this as a variable in the prompt.
-<img alt="2_create_new_freeform_prompt_with_variable" src="../images/2_create_new_freeform_prompt_with_variable.png" /></p>
+<p>Find <strong>Control</strong> in the search table.</p>
 </li>
 <li>
-<p>Save the prompt as a prompt template.
-<img alt="3_save_prompt_template" src="../images/3_save_prompt_template.png" /></p>
+<p>Expand <strong>Fields</strong> and look for the <strong>Control AI</strong> field group. This is where we will add our 5W AI analysis output - the control quality rating. 
+<img alt="2_control_field_group" src="images/2_control_field_group.png" /> </p>
 </li>
 <li>
-<p>Promote asset to deployment space.
-<img alt="4_promote_to_space" src="../images/4_promote_to_space.png" /></p>
+<p>Via the <strong>Administration</strong> menu, click on <strong>Enable System Admin Mode</strong>. This creates a database lock so that object fields can be modified.
+<img alt="4_enabling_system_admin_mode" src="images/4_enabling_system_admin_mode.png" /> </p>
 </li>
 <li>
-<p>Deploy asset in deployment space.
-<img alt="7_deploy_promoted_asset" src="../images/7_deploy_promoted_asset.png" /></p>
+<p>Back in the Control object configuration, Click on <strong>New Field +</strong>.</p>
 </li>
 <li>
-<p>Note down the deployment ID. We will need this in OpenPages.
-<img alt="9_deployed_prompt_template" src="../images/9_deployed_prompt_template.png" /></p>
+<p>Add a meaningful name, label and description. The data type is  and The data type is <code>Enumnerated String</code> with the values matching to the taxonomy that should be output by the AI model.
+<img alt="3_control_quality_field_configuration" src="images/3_control_quality_field_configuration.png" /> </p>
+</li>
+<li>
+<p>Save, and disable system admin mode after the field group has been created.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2-adding-the-new-object-fields-to-the-control-view">2. Adding the New Object Fields to the Control View</h2>
+<ol>
+<li>
+<p>As in Lab 1.3, navigate to the view customiser for a <strong>Control</strong>.</p>
+</li>
+<li>
+<p>Add in the new field created for the <strong>5W Control Rating</strong> into the view
+<img alt="5_adding_control_rating_field_to_control" src="images/5_adding_control_rating_field_to_control.png" /></p>
+</li>
+<li>
+<p>Publish the view.</p>
 </li>
 </ol>
 
