@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter1_prompt_basics/lab_pii_redaction/">
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter3_advanced/2_set_up_and_integrate_ai/">
       
       
+        <link rel="prev" href="../1_modify_op_object/">
+      
+      
+        <link rel="next" href="../3_bulk_analysis/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lab: PII Redaction Prompt - OpenPages AI Bootcamp</title>
+        <title>Lab 2.2: Set-up and Integrate AI Model - OpenPages AI Bootcamp</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-pii-redaction-prompt" class="md-skip">
+        <a href="#lab-22-set-up-and-integrate-ai-model" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab: PII Redaction Prompt
+              Lab 2.2: Set-up and Integrate AI Model
             
           </span>
         </div>
@@ -262,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../chapter1_prompt_basics/" class="md-nav__link">
         
   
   
@@ -426,18 +430,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -453,7 +459,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Chapter 3
@@ -467,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -490,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/1_modify_op_object/" class="md-nav__link">
+      <a href="../1_modify_op_object/" class="md-nav__link">
         
   
   
@@ -510,10 +516,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../chapter3_advanced/2_set_up_and_integrate_ai/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Set-up and Integrate AI Model
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -524,6 +552,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-and-deploy-the-prompt-template-in-watsonxai" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create and Deploy the Prompt Template in watsonx.ai
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-integrating-deployed-ai-model-to-openpages" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Integrating Deployed AI Model to OpenPages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-add-the-model-to-control-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Add the Model to Control View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-the-model-in-openpages" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Test the Model in OpenPages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -536,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3_advanced/3_bulk_analysis/" class="md-nav__link">
+      <a href="../3_bulk_analysis/" class="md-nav__link">
         
   
   
@@ -586,27 +670,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
+  <a href="#1-create-and-deploy-the-prompt-template-in-watsonxai" class="md-nav__link">
     <span class="md-ellipsis">
-      Objective
+      1. Create and Deploy the Prompt Template in watsonx.ai
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
+  <a href="#2-integrating-deployed-ai-model-to-openpages" class="md-nav__link">
     <span class="md-ellipsis">
-      Steps
+      2. Integrating Deployed AI Model to OpenPages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extension-tasks" class="md-nav__link">
+  <a href="#3-add-the-model-to-control-view" class="md-nav__link">
     <span class="md-ellipsis">
-      Extension Tasks
+      3. Add the Model to Control View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-the-model-in-openpages" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Test the Model in OpenPages
     </span>
   </a>
   
@@ -628,39 +721,171 @@
 
 
 
-<h1 id="lab-pii-redaction-prompt">Lab: PII Redaction Prompt</h1>
-<h2 id="objective">Objective</h2>
-<p>Implement the PII redaction prompt, run it, parse results, and integrate with OpenPages UI.</p>
+<h1 id="lab-22-set-up-and-integrate-ai-model">Lab 2.2: Set-up and Integrate AI Model</h1>
 <hr />
-<h2 id="steps">Steps</h2>
+<h2 id="1-create-and-deploy-the-prompt-template-in-watsonxai">1. Create and Deploy the Prompt Template in watsonx.ai</h2>
 <ol>
-<li>Open the prompt template: <code>prompts/pii_redaction.json</code>  </li>
-<li>Load the example input: <code>examples/inputs/example_text_pii.txt</code>  </li>
-<li>Replace placeholder <code>{{Text}}</code> with the example input  </li>
-<li>Run the prompt in your prompt client (or notebook)  </li>
-<li>Inspect returned JSON, compare against <code>examples/outputs/example_pii_redacted.json</code>  </li>
-<li>Use JSONata or mapping logic to extract <code>pii_identified</code> and <code>redacted_text</code>  </li>
-<li>Inside OpenPages sandbox, create a UI component (e.g. a button) that:</li>
-<li>Takes the record’s relevant text  </li>
-<li>Sends it to the prompt  </li>
-<li>Parses returned JSON  </li>
-<li>Updates record fields (e.g. <code>piiList</code>, <code>redactedDescription</code>)  </li>
-<li>Test with multiple input variations  </li>
-<li>Document any mis‑parses or format errors  </li>
+<li>As per Lab 1.1, create an AI deployment in watsonx.ai for 5W analysis. Use the Control Description as input, and output each of the 5 Ws as well as the Control Rating. Ensure that the Control Rating output aligns with the taxonomy created in Lab 2.1. Here is something to get you started:</li>
+</ol>
+<pre><code>[INSTRUCTION]
+
+&gt; Define the purpose of the AI and it's task &lt;
+
+Control Description Format:
+&gt; Define the input and the definition of each 5W it should ideally contain &lt;
+
+Output you need to give within a single json object:
+1. &gt; Provide the instruction to extract the 5Ws &lt;
+2. &gt; Provide the instruction to generate the Control Quality &lt; 
+4. &gt; Provide the instruction to generate the explanation of the Control Quality &lt;
+
+Generate only a json object, no post script tagging such as [END OF INSTRUCTION].
+
+[FEW-SHOT EXAMPLES]
+
+Example 1:
+Control Description:
+&quot;All automated and manual alerts must be assessed in a timely manner in line with the Investigations Standard Operating Procedure (SOP) by investigators and adhere to internal tolerances (WHY). The requirements are outlined in the Institutional Investigations SOP and the Investigation Timing, Tolerances &amp; Appetite document. The Investigations team Lead (WHO) monitors the timeliness of alert assessment at least twice weekly (WHEN) via the Transaction Monitoring and Investigations Dashboard. Metrics (WHAT) are discussed at the monthly Finance Oversight Forum prior to being presented at the Global Working Group Forum. Exceptions are escalated to Head of Finance. Email evidence of escalations and metrics reported to the forums are saved in the Finance SharePoint (WHERE).&quot;
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+&quot;Who&quot;: &gt; The who &lt;,
+&quot;What&quot;: &gt; The what &lt;,
+&quot;When&quot;: &gt; The when &lt;,
+&quot;Where&quot;: &gt; The where &lt;,
+&quot;Why&quot;: &gt; The why &lt;,
+&quot;Control Quality&quot;: &gt; The control quality &lt;,
+&quot;Control Quality Explain&quot;: &gt; An explanation of why the control quality is the way it is&lt;
+}
+
+Example 2:
+Control Description:
+&quot;Multiple levels of review and challenge of the stress testing assumptions and results, from R&amp;CA team members to Division Head to CEO of the Group and the Bank.&quot;
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+&quot;Who&quot;: &gt; The who &lt;,
+&quot;What&quot;: &gt; The what &lt;,
+&quot;When&quot;: &gt; The when &lt;,
+&quot;Where&quot;: &gt; The where &lt;,
+&quot;Why&quot;: &gt; The why &lt;,
+&quot;Control Quality&quot;: &gt; The control quality &lt;,
+&quot;Control Quality Explain&quot;: &gt; An explanation of why the control quality is the way it is&lt;
+}
+
+Example 3:
+Control Description:
+&quot;Why: The control objective is to ensure the adequacy of professional indemnity insurance arrangements for Customer Finance.\nWhat: On an annual basis, Custody and Product Management review the adequacy of the compensation and insurance arrangements for Customer Finance. In assessing the adequacy of the PI insurance cover, the following information is reviewed: \n•\tCustomer Finance’s business activities and financial position \n•\tInformation about the PI insurance cover against the requirements under ASIC Regulatory Guide
+RG126\nWho: The review is coordinated by The Office of the Trustee with the input from Product Management. \n&quot; 
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+&quot;Who&quot;: &gt; The who &lt;,
+&quot;What&quot;: &gt; The what &lt;,
+&quot;When&quot;: &gt; The when &lt;,
+&quot;Where&quot;: &gt; The where &lt;,
+&quot;Why&quot;: &gt; The why &lt;,
+&quot;Control Quality&quot;: &gt; The control quality &lt;,
+&quot;Control Quality Explain&quot;: &gt; An explanation of why the control quality is the way it is&lt;
+}
+
+Example 4:
+Control Description:
+&quot;[WHO] Prudential Risk CARM, \n[WHAT] as data consumers, provides performs appropriate checks and reviews of input data, including through variance analysis and four-eyes checks (multiple reviews within Prudential Risk CARM) as outlined in the calculation, Monitoring and Reporting procedures \n[WHEN] Every quarter, both before (input data check) and after (variance analysis, four-eyes check) generating dashboard, \n[WHY] To verify the input data and how it is processed by the dashboard, and identify data issues which may require rectification  \n[WHERE] Evidence of the above review and variance analysis is saved in the SharePoint.&quot;
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+&quot;Who&quot;: &gt; The who &lt;,
+&quot;What&quot;: &gt; The what &lt;,
+&quot;When&quot;: &gt; The when &lt;,
+&quot;Where&quot;: &gt; The where &lt;,
+&quot;Why&quot;: &gt; The why &lt;,
+&quot;Control Quality&quot;: &gt; The control quality &lt;,
+&quot;Control Quality Explain&quot;: &gt; An explanation of why the control quality is the way it is&lt;
+}
+
+Example 5:
+Control Description:
+&quot;[WHO] Credit Group [WHAT] notify senior management and escalate [WHEN] which have exceeded APS221 prudential limit thresholds of 25%. [WHY] This is to support regulatory reporting obligations and to provide transparency over management and mitigation of material large exposures.[WHERE] Evidence of large exposure escalations are recorded in an appropriate register.&quot;
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+&quot;Who&quot;: &gt; The who &lt;,
+&quot;What&quot;: &gt; The what &lt;,
+&quot;When&quot;: &gt; The when &lt;,
+&quot;Where&quot;: &gt; The where &lt;,
+&quot;Why&quot;: &gt; The why &lt;,
+&quot;Control Quality&quot;: &gt; The control quality &lt;,
+&quot;Control Quality Explain&quot;: &gt; An explanation of why the control quality is the way it is&lt;
+}
+
+[INPUT]
+
+Control Description:
+{control_description}
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+</code></pre>
+<hr />
+<h2 id="2-integrating-deployed-ai-model-to-openpages">2. Integrating Deployed AI Model to OpenPages</h2>
+<ol>
+<li>
+<p>Once the AI model is deployed in watsonx.ai, it can be integrated into OpenPages. As per Lab 1.2, configure a Custom Machine Learning Model and set up the <strong>Model access</strong> and <strong>Inputs</strong>. 
+[placeholder for inputs screenshot]</p>
+</li>
+<li>
+<p>For <strong>Outputs</strong>, add outputs for headers for each of the 5Ws (for formatting), as well as the actual output text with the JSONata string that translates the AI model output. Ensure that the Control Rating is set to the target field created in lab 2.1. 
+[placeholder for output screenshot 1]
+[placeholder for output screenshot 2]</p>
+</li>
+<li>
+<p>Add a suitable dscription and customise the style to your choosing in <strong>Guidance</strong>. Save the model.</p>
+</li>
 </ol>
 <hr />
-<h2 id="extension-tasks">Extension Tasks</h2>
-<ul>
-<li>Modify the prompt to also return the character indexes (start/end) of each PII occurrence  </li>
-<li>Add optional types (e.g. “Phone number,” “Email”) and group by type  </li>
-<li>Add a fallback clause: if no PII detected, return an empty list (don’t error)</li>
-</ul>
+<h2 id="3-add-the-model-to-control-view">3. Add the Model to Control View</h2>
+<ol>
+<li>
+<p>Navigate to the control object view as per Lab 2.1 to add the AI model we deployed.</p>
+</li>
+<li>
+<p>Rather than add a new AI button, navigate to the <strong>Description</strong> field and aadd the 5W model to <strong>AI model configuration</strong>. Click Done and publish the view.
+[screenshot of view]</p>
+</li>
+</ol>
+<hr />
+<h2 id="4-test-the-model-in-openpages">4. Test the Model in OpenPages</h2>
+<ol>
+<li>Find an example control, and run the 5W AI model that appears near the control description. The rating output will populate the <strong>5W Control Rating</strong> field created before.
+[screenshot of tested 5W AI inside OP]</li>
+</ol>
 
 
 
 
 
 
+
+  
+  
 
 
 
