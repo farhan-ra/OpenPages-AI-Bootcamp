@@ -135,11 +135,11 @@ Response (JSON Output):
 ## 2. Integrating Deployed AI Model to OpenPages
 
 1. Once the AI model is deployed in watsonx.ai, it can be integrated into OpenPages. As per Lab 1.2, configure a Custom Machine Learning Model and set up the **Model access** and **Inputs**. 
-[placeholder for inputs screenshot]
+![6_model_inputs.png](images/6_model_inputs.png)
 
 2. For **Outputs**, add outputs for headers for each of the 5Ws (for formatting), as well as the actual output text with the JSONata string that translates the AI model output. Ensure that the Control Rating is set to the target field created in lab 2.1. 
-[placeholder for output screenshot 1]
-[placeholder for output screenshot 2]
+![7_model_outputs_1.png](images/7_model_outputs_1.png)
+![8_model_outputs_2.png](images/8_model_outputs_2.png)
 
 3. Add a suitable dscription and customise the style to your choosing in **Guidance**. Save the model.
 
@@ -149,12 +149,12 @@ Response (JSON Output):
 
 1. Navigate to the control object view as per Lab 2.1 to add the AI model we deployed.
 
-2. Rather than add a new AI button, navigate to the **Description** field and aadd the 5W model to **AI model configuration**. Click Done and publish the view.
-[screenshot of view]
+2. Rather than add a new AI button, navigate to the **Description** field and add the 5W model to **AI model configuration**. Click Done and publish the view.
+![9_adding_5w_model_to_view.png](images/9_adding_5w_model_to_view.png)
 
 ---
 
 ## 4. Test the Model in OpenPages
 
 1. Find an example control, and run the 5W AI model that appears near the control description. The rating output will populate the **5W Control Rating** field created before.
-[screenshot of tested 5W AI inside OP]
+![10_testing_5w_model.png](images/10_testing_5w_model.png)

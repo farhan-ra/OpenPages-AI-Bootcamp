@@ -25,13 +25,13 @@ On the “New Model” screen:
 - Enter **Name** and **Label** (e.g. `risk_classification`)  
 - Select the **AI Service Type** (e.g. Watson Machine Learning on IBM Cloud)  
 - Enter **Access Parameters** such as:  
-  - **Watson service type:** *Watson Machine Learning on Cloud*
-  - **Authentication URL:** *https://iam.cloud.ibm.com/identity/token*
+  - **Watson service type:** `Watson Machine Learning on Cloud`
+  - **Authentication URL:** `https://iam.cloud.ibm.com/identity/token`
   - **API Key:** Retrieve from IBM Cloud 
-  - **Base Deployment URL:** *https://us-south.ml.cloud.ibm.com/ml/v4*
+  - **Base Deployment URL:** `https://us-south.ml.cloud.ibm.com/ml/v4`
   - **Deployment ID:** Retrieve from deployment space on watsonx.ai
   - **Space ID:**  Retrieve from model/prompt template deployment on watsonx.ai
-  - **API version:** *2021-05-01*  
+  - **API version:** `2021-05-01`  
 - Click **Test Connection** to verify connectivity  
 ![13_new_model_details](images/13_new_model_details.png)
 

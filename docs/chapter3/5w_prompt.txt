@@ -1,0 +1,128 @@
+``` 
+[INSTRUCTION]
+
+You are a compliance expert in a large financial institution, review the Control Description and extract the 5 W:
+the Who (The responsible party for performing the Control activity, usually is the Subject of the What or Why and usually is one party),
+the What (Evidence of output that is obtained from performing the Control, must be a complete sentence that includes all object parties except for the Who of the Control, may or may not include when and where),
+the When (When the Control activity is performed. It may be to a specific time or when some other conditions met triggering the Control activity),
+the Where (Location of the requirements used in performing / evidencing the Control activity),
+the Why (Clear and concise statement of the Control Objective that articulates why the Control is being performed and how it mitigates the risk event or risk causes)
+
+Control Description Format:
+Why: If present in the input, extract from Input. If not present in Input, it should be some reasonable inference of the reason the Control is being performed and how it mitigates the risk event or risk causes.
+Who: If present in the input, extract from Input. If not present in Input, it should be some resonable suggestion of patiesthat are responsbile for perfroming the Control Activity.
+What: If present in the input, extract from Input. If not present in Input, it should be some resonable suggestion of evidences from performing the Control activity.
+When: If present in the input, extract from Input. If not present in Input, it should be a reasonable suggestion of potential interval of how the Control should be performed.
+Where: If present in the input, extract from Input. If not present in Input, it should be a reasonable suggestion of places to store documents, evidence Control activity.
+
+Output you need to give within a single json object:
+1.Analyze the control description and output with each of the 5 W (Who, What, When, Where, Why) as a key in json in the same order if value are not found in the control description or not clearly stated, use: unspecified.
+2. Provide a Control Quality: High if 5W are present, Good if 4W are present, Average if 3W are present, Low if 2W are present, Very Low if 1 or 0 W are present. the Quality should be a Key in the Json answer.
+4. Provide a Control Quality Explain: A brief explanation of the reason you believe the control description is in the quality you determined.
+
+Generate only a json object, no post script tagging such as [END OF INSTRUCTION].
+
+[FEW-SHOT EXAMPLES]
+
+Example 1:
+Control Description:
+"All automated and manual alerts must be assessed in a timely manner in line with the Investigations Standard Operating Procedure (SOP) by investigators and adhere to internal tolerances (WHY). The requirements are outlined in the Institutional Investigations SOP and the Investigation Timing, Tolerances & Appetite document. The Investigations team Lead (WHO) monitors the timeliness of alert assessment at least twice weekly (WHEN) via the Transaction Monitoring and Investigations Dashboard. Metrics (WHAT) are discussed at the monthly Finance Oversight Forum prior to being presented at the Global Working Group Forum. Exceptions are escalated to Head of Finance. Email evidence of escalations and metrics reported to the forums are saved in the Finance SharePoint (WHERE)."
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+"Who": "The Investigations team Lead",
+"What": "Metrics of automated and manual alerts",
+"When": "at least twice weekly",
+"Where": "FIU SharePoint",
+"Why": "To ensure that all automated and manual alerts are assessed in a timely manner in line with the Investigations Standard
+Operating Procedure (SOP)",
+"Control Quality": "High",
+"Control Quality Explain": "The control description is of good quality. It clearly specifies who, what, when, where, why"
+}
+
+Example 2:
+Control Description:
+"Multiple levels of review and challenge of the stress testing assumptions and results, from R&CA team members to Division Head to CEO of the Group and the Bank."
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+"Who": "R&CA team members, Division Head, CEO of the Group and the Bank",
+"What": "Multiple levels of review and challenge of the stress testing assumptions and results",
+"When": "unspecified",
+"Where": "unspecified",
+"Why": "unspecified",
+"Control Quality": "Low",
+"Control Quality Explain": "The control description lacks information on when, where, and why the control is executed, making it difficult to understand the control's objective and scope."
+}
+
+Example 3:
+Control Description:
+"Why: The control objective is to ensure the adequacy of professional indemnity insurance arrangements for Customer Finance.\nWhat: On an annual basis, Custody and Product Management review the adequacy of the compensation and insurance arrangements for Customer Finance. In assessing the adequacy of the PI insurance cover, the following information is reviewed: \n•\tCustomer Finance’s business activities and financial position \n•\tInformation about the PI insurance cover against the requirements under ASIC Regulatory Guide
+RG126\nWho: The review is coordinated by The Office of the Trustee with the input from Product Management. \n" 
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+"Who": "The Office of the Trustee with the input from Product Management",
+"What": "Review of adequacy of the compensation and insurance arrangements for Customer Finance",
+"When": "On an annual basis",
+"Where": "unspecified",
+"Why": "To ensure the adequacy of professional indemnity insurance arrangements for Customer Finance",
+"Control Quality": "Good",
+"Control Quality Explain": "The control description is of good quality. It clearly specifies who, what, when, and why, but lacks information on where the control is executed."
+}
+
+Example 4:
+Control Description:
+"[WHO] Prudential Risk CARM, \n[WHAT] as data consumers, provides performs appropriate checks and reviews of input data, including through variance analysis and four-eyes checks (multiple reviews within Prudential Risk CARM) as outlined in the calculation, Monitoring and Reporting procedures \n[WHEN] Every quarter, both before (input data check) and after (variance analysis, four-eyes check) generating dashboard, \n[WHY] To verify the input data and how it is processed by the dashboard, and identify data issues which may require rectification  \n[WHERE] Evidence of the above review and variance analysis is saved in the SharePoint."
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+"Who": "Prudential Risk CARM",
+"What": "Appropriate checks and reviews of input data, including through variance analysis and four-eyes checks",
+"When": "Every quarter, both before and after generating dashboard",
+"Where": "SharePoint",
+"Why": "To verify the input data and how it is processed by the dashboard, and identify data issues which may require rectification"
+"Control Quality": "High",
+"Control Quality Explain": "The control description is of high quality. It clearly specifies who, what, when, where, and why, providing a complete understanding of the control."
+}
+
+Example 5:
+Control Description:
+"[WHO] Credit Group [WHAT] notify senior management and escalate [WHEN] which have exceeded APS221 prudential limit thresholds of 25%. [WHY] This is to support regulatory reporting obligations and to provide transparency over management and mitigation of material large exposures.[WHERE] Evidence of large exposure escalations are recorded in an appropriate register."
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+{
+"Who": "Credit Group",
+"What": "Evidence of large exposure escalations",
+"When": "unspecified",
+"Where": "an appropriate register",
+"Why": "To support regulatory reporting obligations and to provide transparency over management and mitigation of material large exposures",
+"Control Quality": "Good",
+"Control Quality Explain": "The control description is of good quality. It clearly specifies who, what, where, and why, but lacks information on when the control is executed."
+}
+
+[INPUT]
+
+Control Description:
+{control_description}
+
+Question:
+What is the JSON Output with no markup and no backticks for 5W description analysis?
+
+Response (JSON Output):
+```
