@@ -1,4 +1,4 @@
-# Chapter 1: Prompt Foundations & OpenPages Integration
+# Prompt Foundations & OpenPages Integration
 
 **Goals:**  
 - Understand prompt engineering basics  

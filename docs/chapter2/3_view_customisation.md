@@ -29,7 +29,7 @@ description: "Step‑by‑step lab to integrate an AI model to classify risk des
 
 2. Fill in the **description** (or whatever text triggers the model).  
 
-3. A **lightbulb / insight icon** should appear indicating the model can run (or automatically run). :contentReference[oaicite:9]{index=9}  
+3. A **lightbulb / insight icon** should appear indicating the model can run (or automatically run). 
 
 4. Click on it and observe the **side panel** with model output suggestions (for Level 1 and Level 2).  
 ![24_classify_risk_added_to_view](images/24_classify_risk_added_to_view.png) 
@@ -52,38 +52,3 @@ description: "Step‑by‑step lab to integrate an AI model to classify risk des
 - Use **Debug Info** display to view raw JSON and help in refining JSONata expressions or prompt logic.
 
 ---
-
-## 4. Example JSON Prompt / Response for Your Taxonomy
-
-Below is a skeleton prompt and expected response format (to help you align model output with JSONata):
-
-**Prompt (to model):**
-
-```text
-You are a classifier. Given a description of a risk event, pick one Level 1 (primary) and one Level 2 (subcategory) from this taxonomy:
-
-Level 1 options:
-- Internal Fraud
-- External Fraud
-- Employment Practices and Workplace Safety
-- Clients Products and Business Practices
-- Damage to Physical Assets
-- Business Disruption and System Failures
-- Execution Delivery and Process Management
-
-Level 2 options (examples per Level 1):
-- Internal Fraud → Theft and Fraud, Unauthorized Activity  
-- External Fraud → Systems Security, Theft and Fraud  
-- Employment Practices and Workplace Safety → Employee Relations, Safe Environment, Diversity and Discrimination  
-- Clients Products and Business Practices → Product Flaws, Selection Sponsorship and Exposure, Improper Business or Market Practices, Suitability, Disclosures or Fiduciary, Advisory Activities  
-- Damage to Physical Assets → Wilful damage, Disaster and other events  
-- Business Disruption and System Failures → Infrastructure and Systems  
-- Execution Delivery and Process Management → Vendors and Suppliers, Trade Counterparties, Transaction Data Management, Customer Client Account Management, Reporting and Disclosure, Customer Intake and Documentation  
-
-Return only valid JSON in this form (no extra text):
-
-```json
-{
-  "level_1_classification": "Clients Products and Business Practices",
-  "level_2_classification": "Product Flaws"
-}

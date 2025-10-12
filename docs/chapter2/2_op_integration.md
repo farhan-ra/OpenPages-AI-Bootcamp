@@ -82,7 +82,7 @@ On the **Map Outputs** page:
    - **Output label** (e.g. `PrimaryClassification`, `SecondaryClassification`)  
    - **JSONata expression** to extract the value from the model’s JSON response  
      - Example: if model’s JSON is:  
-       ```json
+       ```
        {
          "level_1_classification": "Clients Products and Business Practices",
          "level_2_classification": "Product Flaws"
@@ -91,13 +91,13 @@ On the **Map Outputs** page:
        then JSONata expressions might be:  
        - `level_1_classification`  
        - `level_2_classification`  
-     - If the response is wrapped (e.g. under `results.generated_text`), you may need `results.generated_text.level_1_classification` :contentReference[oaicite:4]{index=4}
+     - If the response is wrapped (e.g. under `results.generated_text`), you may need `results.generated_text.level_1_classification` 
     ![10_jsonata_translation](images/10_jsonata_translation.png) 
 
    - (If Insight type = Set fields) **Target field**: map the output to your OpenPages enumerated field  
    
-4. Optionally set **Confidence score** or **Minimum confidence thresholds** if your scenario requires filtering suggestions. :contentReference[oaicite:5]{index=5}  
-5. (If using `Set fields`) choose whether suggestions are **User set** or **Automatically set**. :contentReference[oaicite:6]{index=6}  
+4. Optionally set **Confidence score** or **Minimum confidence thresholds** if your scenario requires filtering suggestions.
+5. (If using `Set fields`) choose whether suggestions are **User set** or **Automatically set**.   
 6. Click **Next** to proceed to guidance configuration.
 
 ---
@@ -107,8 +107,8 @@ On the **Map Outputs** page:
 On the **Guidance** page:
 
 1. Enter a **Description** explaining what the model does (e.g. “This model classifies text into risk taxonomy”)  
-2. Optionally set **Notification Messages** or **Style / display options** for how users see the model’s suggestion. :contentReference[oaicite:7]{index=7}  
+2. Optionally set **Notification Messages** or **Style / display options** for how users see the model’s suggestion. 
 3. Optional: you can embed **JSONata-based conditions** for alerts.  
 4. Click **Save** to complete model setup.  
-   > The model should now appear in the Custom Machine Learning Models table with status “Complete” (or “V Complete”). :contentReference[oaicite:8]{index=8}  
+   > The model should now appear in the Custom Machine Learning Models table with status “Complete”. 
 
