@@ -16,9 +16,12 @@ nav:
     - Execute AI in Bulk: chapter3/3_bulk_analysis.md
   - Chapter 4:
     - Overview: chapter4/0_index.md
-theme:
-  name: material
-  palette:
+    - Configuring a Custom View as Input for ML Models: chapter4/1_configure_view_input.md
+    - Validate the View Input: chapter4/2_validate_view_input.md
+    - Develop and Deploy Prompt: chapter4/3_prompt.md
+    - Integrate ML Model and Make Available in View: chapter4/4_integrate.md
+name: material
+palette:
     primary: blue
     accent: light blue
 extra_css:
