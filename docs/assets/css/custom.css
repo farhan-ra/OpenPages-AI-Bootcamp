@@ -111,15 +111,14 @@ img:hover {
 /* Responsive behavior: hide sidebar on small screens */
 @media (max-width: 960px) {
   .md-sidebar--primary {
-    position: absolute;
-    transform: translateX(-280px);
+    transform: translateX(0);
     transition: transform 0.3s ease;
-    pointer-events: none;
+    pointer-events: auto;
   }
 
-  body.md-sidebar--visible .md-sidebar--primary {
-    transform: translateX(0);
-    pointer-events: auto;
+  body.md-sidebar--hidden .md-sidebar--primary {
+    transform: translateX(-280px);
+    pointer-events: none;
   }
 
   .md-main {
@@ -131,7 +130,8 @@ img:hover {
     top: 1rem;
     left: 1rem;
     z-index: 1100;
-    background-color: #f4f4f4;
+    background-color: #0f62fe;
+    color: white;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;

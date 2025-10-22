@@ -1,10 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.getElementById('sidebarToggle');
-  const body = document.body;
+(function () {
+  const toggleClass = 'md-sidebar--hidden';
 
-  if (btn && body) {
-    btn.addEventListener('click', function () {
-      body.classList.toggle('md-sidebar--hidden');
-    });
+  function toggleSidebar() {
+    document.body.classList.toggle(toggleClass);
   }
-});
+
+  function init() {
+    const button = document.getElementById('sidebar-toggle');
+    if (button) {
+      button.addEventListener('click', toggleSidebar);
+    } else {
+      console.warn('Sidebar toggle button not found.');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
