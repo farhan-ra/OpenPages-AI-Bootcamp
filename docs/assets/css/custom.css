@@ -1,11 +1,45 @@
-/* Default image state */
+/* Font - IBM Plex */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Mono&display=swap');
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #161616; /* IBM dark gray */
+}
+
+/* Navigation sidebar */
+.md-nav {
+  background-color: #f4f4f4; /* light gray nav */
+}
+
+/* Code blocks */
+code, pre {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+/* Image hover effect */
 img {
   transition: transform 0.3s ease;
 }
 
-/* Zoom in on hover */
 img:hover {
-  transform: scale(1.5); /* Adjust as needed */
+  transform: scale(1.4);
   z-index: 10;
   position: relative;
+  border: 1px solid #8d8d8d;
+}
+
+/* Links */
+a {
+  color: #0f62fe; /* IBM blue */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }

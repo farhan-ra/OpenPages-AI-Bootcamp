@@ -1,5 +1,39 @@
 site_name: OpenPages AI Bootcamp
 site_url: https://farhan-ra.github.io/Openpages-AI-Bootcamp/
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/ibm-logo.svg  # Add IBM logo
+  # favicon: assets/images/favicon.ico
+  palette:
+    - scheme: default
+      primary: grey
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: grey
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.integrate
+  custom_dir: overrides
+
 nav:
   - Home: index.md
   - Chapter 1: 
@@ -20,9 +54,9 @@ nav:
     - Validate the View Input: chapter4/2_validate_view_input.md
     - Develop and Deploy Prompt: chapter4/3_prompt.md
     - Integrate ML Model and Make Available in View: chapter4/4_integrate.md
-name: material
-palette:
-    primary: blue
-    accent: light blue
+
 extra_css:
   - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/custom.js
