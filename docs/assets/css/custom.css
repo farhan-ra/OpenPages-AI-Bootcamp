@@ -46,9 +46,9 @@ img:hover {
 }
 
 /* Hide top toolbar */
-/* .md-header {
+.md-header {
   display: none !important;
-} */
+}
 
 /* Sidebar base */
 /* .md-sidebar {
@@ -115,26 +115,5 @@ body.md-sidebar--hidden .md-sidebar {
 }
 body.md-sidebar--hidden .md-main {
   margin-left: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .md-sidebar {
-    width: 280px !important;       /* keep sidebar width consistent */
-  }
-  .md-main {
-    margin-left: 280px !important; /* keep content shifted correctly */
-  }
-}
-
-/* Fix: force nav text visible on wide screen */
-.md-sidebar--primary .md-nav__link,
-.md-sidebar--primary .md-nav__title,
-.md-sidebar--primary .md-nav__link span,
-.md-sidebar--primary .md-nav__link .md-ellipsis {
-  color: #161616 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  font-weight: 600 !important;
-  font-family: 'IBM Plex Sans', sans-serif !important;
 }
 
