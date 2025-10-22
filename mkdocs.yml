@@ -15,6 +15,7 @@ theme:
     code: IBM Plex Mono
   features:
     - navigation.expand
+    - navigation.sections
     - search.highlight
     - search.share
     - content.code.copy
