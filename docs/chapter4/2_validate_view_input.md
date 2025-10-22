@@ -99,10 +99,10 @@ Generate the word "Yes".
 5. Unzip the archive and navigate to `LogCollector_{date}_OPNodeServer1/OpenPages/aurora/logs/debug/OpenPagesNodeServerServer1-machinelearning.log`
 
 6. This file contains detailed entries for each AI interaction, including the constructed prompt, the JSON payload, and the LLM’s response.Look for the line that contains a request corresponding to the time you clicked the AI button. 
-![15_logging_request_record.png](images/15_logging_request_record.png.png)
+![15_logging_request_record.png](images/15_logging_request_record.png)
 
 7. The payload sent to your model is then the value against the `objectJson` key.
-![16_logging_objectjson.png](images/16_logging_objectjson.png.png)
+![16_logging_objectjson.png](images/16_logging_objectjson.png)
 
 8. Here is an example of the payload:
 
