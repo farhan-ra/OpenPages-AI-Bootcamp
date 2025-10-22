@@ -50,99 +50,47 @@ img:hover {
   display: none !important;
 }
 
-/* Sidebar base */
+/* Sidebar Styling */
 .md-sidebar--primary {
   background-color: #f4f4f4;
   border-right: 1px solid #e0e0e0;
-  box-sizing: border-box;
-  padding-top: 1rem;
   width: 280px;
-  height: 100vh; 
+  height: 100vh;
+  overflow-y: auto;
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y: auto;
-  color: #161616; 
-  transition: transform 0.3s ease;
-  z-index: 1000; 
-}
-
-/* Sidebar navigation container */
-.md-sidebar--primary .md-nav--primary {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  z-index: 100;
   box-sizing: border-box;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  padding-top: 1rem;
 }
 
-/* Sidebar navigation lists */
-.md-sidebar--primary .md-nav__list {
-  display: block !important;
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1010 !important;
+.md-sidebar__scrollwrap {
+  height: 100%;
+  overflow-y: auto;
 }
 
-/* Sidebar navigation items */
-.md-sidebar--primary .md-nav__item {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1010 !important;
-}
-
-/* Sidebar section titles (e.g., "Chapter 1") */
-.md-sidebar--primary .md-nav__title {
+/* Navigation links */
+.md-nav__link {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
   color: #161616 !important;
-  font-weight: 600 !important;
-  font-size: 1.1em !important;
-  padding: 0.5em 1em !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1010 !important;
-  background-color: transparent !important;
-  cursor: pointer; /* If expandable */
-}
-
-/* Sidebar navigation links */
-.md-sidebar--primary .md-nav__link,
-.md-sidebar--primary .md-nav__link .md-ellipsis,
-.md-sidebar--primary .md-nav__link span {
-  color: #161616 !important;
-  font-weight: 600 !important;
-  font-family: 'IBM Plex Sans', sans-serif !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
   padding: 0.75em 1em !important;
-  position: relative;
-  z-index: 1010 !important;
-  pointer-events: auto !important;
   white-space: normal;
-  margin-left: 0 !important;
-  background-color: transparent !important;
 }
 
-.md-sidebar--primary .md-nav__link:hover {
-  background-color: #e8f0fe !important;
+.md-nav__link:hover {
+  background-color: #e8f0fe;
 }
 
-.md-sidebar--primary .md-nav__link--active {
-  background-color: #ffffff !important;
-  border-left: 4px solid #0f62fe !important;
+.md-nav__link--active {
+  background-color: #ffffff;
+  border-left: 4px solid #0f62fe;
 }
 
-/* Subitems */
+/* Subitem links */
 .md-nav__list .md-nav__link {
   padding-left: 2em !important;
-  margin-left: 0 !important;
 }
 
 /* Collapse icon (if present) */
@@ -151,20 +99,43 @@ img:hover {
   color: #6f6f6f;
 }
 
-/* Toggle sidebar off */
-body.md-sidebar--hidden .md-sidebar--primary {
-  transform: translateX(-280px);
-  pointer-events: none;
-}
-
-/* Main content */
+/* Main content area */
 .md-main {
   margin-left: 280px;
   padding: 2rem;
+  transition: margin-left 0.3s ease;
   position: relative;
   z-index: 0;
-  transition: margin-left 0.3s ease;
 }
-body.md-sidebar--hidden .md-main {
-  margin-left: 0;
+
+/* Responsive behavior: hide sidebar on small screens */
+@media (max-width: 960px) {
+  .md-sidebar--primary {
+    position: absolute;
+    transform: translateX(-280px);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  body.md-sidebar--visible .md-sidebar--primary {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .md-main {
+    margin-left: 0;
+  }
+
+  #sidebar-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background-color: #f4f4f4;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
 }

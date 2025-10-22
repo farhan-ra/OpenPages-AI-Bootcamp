@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.getElementById('sidebarToggle');
-  const body = document.body;
-
-  if (btn && body) {
-    btn.addEventListener('click', function () {
-      body.classList.toggle('md-sidebar--hidden');
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.getElementById("sidebar-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("md-sidebar--visible");
     });
   }
 });
