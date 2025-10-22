@@ -5,7 +5,7 @@ theme:
   name: material
   custom_dir: overrides
   logo: assets/images/ibm-logo.svg
-  favicon: assets/images/favicon.ico
+  # favicon: assets/images/favicon.ico
   palette:
     - scheme: default
       primary: grey
@@ -15,11 +15,9 @@ theme:
     code: IBM Plex Mono
   features:
     - navigation.expand
-    - toc.integrate
     - search.highlight
     - search.share
     - content.code.copy
-
 
 nav:
   - Home: index.md
@@ -46,5 +44,4 @@ extra_css:
   - assets/css/custom.css
 
 extra_javascript:
-  - assets/js/custom.js
   - assets/js/sidebar-toggle.js

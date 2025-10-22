@@ -1,5 +1,5 @@
 /* Font - IBM Plex */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap');
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -43,3 +43,60 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Sidebar container full height */
+.md-sidebar {
+  background-color: #f4f4f4; /* light grey like IBM docs */
+  border-right: 1px solid #e0e0e0;
+  height: 100vh;
+  position: fixed;
+  width: 280px; /* adjust width as desired */
+  overflow-y: auto;
+}
+
+/* Content area should have left margin to avoid being under sidebar */
+.md-main {
+  margin-left: 280px;
+  padding-top: 0 !important; /* Remove top padding if header is hidden */
+}
+
+/* Base link styling inside sidebar */
+.md-sidebar .md-nav__link {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #161616; /* dark grey text */
+  padding: 0.75em 1em;
+}
+
+/* On hover */
+.md-sidebar .md-nav__link:hover {
+  background-color: #e8f0fe; /* very light blue accent */
+}
+
+/* Active/current page */
+.md-sidebar .md-nav__link.md-nav__link--active {
+  border-left: 3px solid #0f62fe; /* IBM blue accent */
+  background-color: #ffffff;
+  font-weight: 600;
+}
+
+/* Nested levels indent */
+.md-sidebar .md-nav__list .md-nav__link {
+  padding-left: 2em;
+}
+
+/* Collapse icons */
+.md-sidebar .md-nav__link .md-nav__icon {
+  margin-right: 0.5em;
+  color: #6f6f6f;
+}
+
+/* Smooth transition for collapses */
+.md-sidebar .md-nav__list {
+  transition: max-height 0.2s ease-in-out;
+}
+
+/* Hide top toolbar/header */
+.md-header {
+  display: none !important;
+}
+
