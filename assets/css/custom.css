@@ -1,13 +1,11 @@
-/* ─────────────────────────────────────────────── */
-/* ✅ IBM Fonts */
+/* IBM Plex Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap');
 
-/* ─────────────────────────────────────────────── */
-/* ✅ Base Styles */
+/* Base Styles */
 body {
   font-family: 'IBM Plex Sans', sans-serif;
-  background-color: #ffffff;
-  color: #161616; /* IBM dark gray */
+  background-color: #fff;
+  color: #161616;
   margin: 0;
 }
 
@@ -17,116 +15,128 @@ h1, h2, h3, h4, h5, h6 {
   color: #161616;
 }
 
+/* Code blocks */
+code, pre {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+}
+
 /* Links */
 a {
-  color: #0f62fe; /* IBM Blue */
+  color: #0f62fe;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* Code blocks */
-code, pre {
-  font-family: 'IBM Plex Mono', monospace;
-  background-color: #f4f4f4;
-  border-radius: 4px;
-  padding: 0.2em 0.4em;
-}
-
-/* ─────────────────────────────────────────────── */
-/* ✅ Sidebar Styles */
-.md-sidebar {
-  width: 280px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: #f4f4f4; /* IBM light gray */
-  border-right: 1px solid #e0e0e0;
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-  transform: translateX(0);
-  z-index: 100;
-}
-
-/* Sidebar hidden (toggled via body class) */
-body.md-sidebar--hidden .md-sidebar {
-  transform: translateX(-280px);
-  pointer-events: none;
-}
-
-/* ─────────────────────────────────────────────── */
-/* ✅ Sidebar Navigation Links */
-.md-nav {
-  padding: 1rem 0;
-}
-
-.md-nav__item {
-  list-style: none;
-}
-
-.md-nav__link,
-.md-nav__link span,
-.md-nav__link .md-ellipsis {
-  color: #161616 !important; /* IBM dark gray */
-  font-weight: 600 !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-
-.md-nav__link:hover {
-  background-color: #e8f0fe; /* Light IBM blue */
-}
-
-.md-nav__link--active {
-  background-color: #ffffff;
-  border-left: 4px solid #0f62fe; /* IBM blue */
-  font-weight: 600;
-}
-
-/* Nested levels */
-.md-nav__list .md-nav__link {
-  padding-left: 2em;
-}
-
-/* Collapse icon */
-.md-nav__icon {
-  margin-right: 0.5em;
-  color: #6f6f6f;
-}
-
-/* ─────────────────────────────────────────────── */
-/* ✅ Content Area */
-.md-main {
-  margin-left: 280px;
-  padding: 2rem;
-  transition: margin-left 0.3s ease;
-}
-
-/* Adjust when sidebar is hidden */
-body.md-sidebar--hidden .md-main {
-  margin-left: 0;
-}
-
-/* ─────────────────────────────────────────────── */
-/* ✅ Header (Hidden) */
-.md-header {
-  display: none !important;
-}
-
-/* ─────────────────────────────────────────────── */
-/* ✅ Image Hover Zoom */
+/* Images */
 img {
   transition: transform 0.3s ease;
   max-width: 100%;
   height: auto;
 }
-
 img:hover {
   transform: scale(1.4);
   z-index: 10;
   position: relative;
   border: 1px solid #8d8d8d;
 }
+
+/* Hide top toolbar */
+.md-header {
+  display: none !important;
+}
+
+/* Sidebar base */
+.md-sidebar {
+  background-color: #f4f4f4;
+  border-right: 1px solid #e0e0e0;
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+/* Sidebar navigation links */
+.md-nav {
+  padding-top: 1rem;
+}
+
+.md-nav__link,
+.md-nav__link .md-ellipsis,
+.md-nav__link span {
+  color: #161616 !important;
+  font-weight: 600 !important;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  padding: 0.75em 1em;
+}
+
+.md-nav__link:hover {
+  background-color: #e8f0fe;
+}
+
+.md-nav__link--active {
+  background-color: #ffffff;
+  border-left: 4px solid #0f62fe;
+}
+
+/* Subitems */
+.md-nav__list .md-nav__link {
+  padding-left: 2em;
+}
+
+/* Collapse icon (if present) */
+.md-nav__icon {
+  margin-right: 0.5em;
+  color: #6f6f6f;
+}
+
+/* Toggle sidebar off */
+body.md-sidebar--hidden .md-sidebar {
+  transform: translateX(-100%);
+}
+
+/* Main content */
+.md-main {
+  margin-left: 280px;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+body.md-sidebar--hidden .md-main {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .md-sidebar {
+    width: 280px !important;       /* keep sidebar width consistent */
+  }
+  .md-main {
+    margin-left: 280px !important; /* keep content shifted correctly */
+  }
+}
+
+/* Fix: force nav text visible on wide screen */
+.md-sidebar--primary .md-nav__link,
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav__link span,
+.md-sidebar--primary .md-nav__link .md-ellipsis {
+  color: #161616 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 600 !important;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+
+
