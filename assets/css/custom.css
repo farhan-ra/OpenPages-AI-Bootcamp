@@ -1,4 +1,4 @@
-/* IBM Plex Fonts */
+/* IBM Plex Fonts
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap');
 
 /* Base Styles */
@@ -46,12 +46,12 @@ img:hover {
 }
 
 /* Hide top toolbar */
-.md-header {
+/* .md-header {
   display: none !important;
-}
+} */
 
 /* Sidebar base */
-.md-sidebar {
+/* .md-sidebar {
   background-color: #f4f4f4;
   border-right: 1px solid #e0e0e0;
   width: 280px;
@@ -63,7 +63,7 @@ img:hover {
   transform: translateX(0);
   transition: transform 0.3s ease;
   z-index: 100;
-}
+} */
 
 /* Sidebar navigation links */
 .md-nav {
@@ -137,6 +137,4 @@ body.md-sidebar--hidden .md-main {
   font-weight: 600 !important;
   font-family: 'IBM Plex Sans', sans-serif !important;
 }
-
-
 
