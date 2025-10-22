@@ -1,19 +1,29 @@
-/* Font - IBM Plex */
+/* ─────────────────────────────────────────────── */
+/* ✅ IBM Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono&display=swap');
 
+/* ─────────────────────────────────────────────── */
+/* ✅ Base Styles */
 body {
   font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #ffffff;
+  color: #161616; /* IBM dark gray */
+  margin: 0;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  color: #161616; /* IBM dark gray */
+  color: #161616;
 }
 
-/* Navigation sidebar */
-.md-nav {
-  background-color: #f4f4f4; /* light gray nav */
+/* Links */
+a {
+  color: #0f62fe; /* IBM Blue */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 /* Code blocks */
@@ -21,11 +31,97 @@ code, pre {
   font-family: 'IBM Plex Mono', monospace;
   background-color: #f4f4f4;
   border-radius: 4px;
+  padding: 0.2em 0.4em;
 }
 
-/* Image hover effect */
+/* ─────────────────────────────────────────────── */
+/* ✅ Sidebar Styles */
+.md-sidebar {
+  width: 280px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #f4f4f4; /* IBM light gray */
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 100;
+}
+
+/* Sidebar hidden (toggled via body class) */
+body.md-sidebar--hidden .md-sidebar {
+  transform: translateX(-280px);
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────── */
+/* ✅ Sidebar Navigation Links */
+.md-nav {
+  padding: 1rem 0;
+}
+
+.md-nav__item {
+  list-style: none;
+}
+
+.md-nav__link,
+.md-nav__link span,
+.md-nav__link .md-ellipsis {
+  color: #161616 !important; /* IBM dark gray */
+  font-weight: 600 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+.md-nav__link:hover {
+  background-color: #e8f0fe; /* Light IBM blue */
+}
+
+.md-nav__link--active {
+  background-color: #ffffff;
+  border-left: 4px solid #0f62fe; /* IBM blue */
+  font-weight: 600;
+}
+
+/* Nested levels */
+.md-nav__list .md-nav__link {
+  padding-left: 2em;
+}
+
+/* Collapse icon */
+.md-nav__icon {
+  margin-right: 0.5em;
+  color: #6f6f6f;
+}
+
+/* ─────────────────────────────────────────────── */
+/* ✅ Content Area */
+.md-main {
+  margin-left: 280px;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adjust when sidebar is hidden */
+body.md-sidebar--hidden .md-main {
+  margin-left: 0;
+}
+
+/* ─────────────────────────────────────────────── */
+/* ✅ Header (Hidden) */
+.md-header {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────── */
+/* ✅ Image Hover Zoom */
 img {
   transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
 }
 
 img:hover {
@@ -34,69 +130,3 @@ img:hover {
   position: relative;
   border: 1px solid #8d8d8d;
 }
-
-/* Links */
-a {
-  color: #0f62fe; /* IBM blue */
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Sidebar container full height */
-.md-sidebar {
-  background-color: #f4f4f4; /* light grey like IBM docs */
-  border-right: 1px solid #e0e0e0;
-  height: 100vh;
-  position: fixed;
-  width: 280px; /* adjust width as desired */
-  overflow-y: auto;
-}
-
-/* Content area should have left margin to avoid being under sidebar */
-.md-main {
-  margin-left: 280px;
-  padding-top: 0 !important; /* Remove top padding if header is hidden */
-}
-
-/* Base link styling inside sidebar */
-.md-sidebar .md-nav__link {
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: #161616; /* dark grey text */
-  padding: 0.75em 1em;
-}
-
-/* On hover */
-.md-sidebar .md-nav__link:hover {
-  background-color: #e8f0fe; /* very light blue accent */
-}
-
-/* Active/current page */
-.md-sidebar .md-nav__link.md-nav__link--active {
-  border-left: 3px solid #0f62fe; /* IBM blue accent */
-  background-color: #ffffff;
-  font-weight: 600;
-}
-
-/* Nested levels indent */
-.md-sidebar .md-nav__list .md-nav__link {
-  padding-left: 2em;
-}
-
-/* Collapse icons */
-.md-sidebar .md-nav__link .md-nav__icon {
-  margin-right: 0.5em;
-  color: #6f6f6f;
-}
-
-/* Smooth transition for collapses */
-.md-sidebar .md-nav__list {
-  transition: max-height 0.2s ease-in-out;
-}
-
-/* Hide top toolbar/header */
-.md-header {
-  display: none !important;
-}
-
