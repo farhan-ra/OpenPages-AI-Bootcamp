@@ -2,32 +2,14 @@
 
 {% block header %}
   {{ super() }}
-  <div style="background-color:#161616; color:#fff; padding: 10px; text-align: center;">
-    IBM OpenPages AI Bootcamp
+{% endblock %}
+
+{% block sidebar %}
+  <div class="custom-sidebar-header">
+    <button id="sidebar-toggle" aria-label="Toggle sidebar">
+      <span id="sidebar-arrow">←</span>
+    </button>
+    <span class="sidebar-title">IBM OpenPages AI Bootcamp</span>
   </div>
-{% endblock %}
-
-{% block extrahead %}
   {{ super() }}
-  <style>
-    /* Optional: styles for the toggle button */
-    #sidebar-toggle {
-      position: fixed;
-      top: 1em;
-      left: 1em;
-      z-index: 1000;
-      background-color: #0f62fe; /* IBM blue */
-      color: white;
-      border: none;
-      padding: 0.5em 0.75em;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1.25rem;
-    }
-  </style>
-{% endblock %}
-
-{% block content %}
-  {{ super() }}
-  <button id="sidebar-toggle" aria-label="Toggle navigation">☰</button>
 {% endblock %}
