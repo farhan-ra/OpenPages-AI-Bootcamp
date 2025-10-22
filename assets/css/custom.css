@@ -52,28 +52,28 @@ img:hover {
 
 /* Sidebar base */
 .md-sidebar {
-  /* background-color: #f4f4f4;
-  border-right: 1px solid #e0e0e0; */
+  /* background-color: #f4f4f4; */
+  border-right: 1px solid #e0e0e0;
   width: 280px;
   height: 100vh; 
   position: fixed;
-  /* top: 0;
+  top: 0;
   left: 0;
   overflow-y: auto;
-  color: #161616;  */
+  color: #161616; 
   transition: transform 0.3s ease;
   z-index: 100; 
 }
 
 
 /* Sidebar navigation links */
-.md-nav {
+.md-sidebar.md-nav {
   padding-top: 1rem;
 }
 
-.md-nav__link,
-.md-nav__link .md-ellipsis,
-.md-nav__link span {
+.md-sidebar.md-nav__link,
+.md-sidebar.md-nav__link .md-ellipsis,
+.md-sidebar.md-nav__link span {
   color: #161616 !important;
   font-weight: 600 !important;
   font-family: 'IBM Plex Sans', sans-serif !important;
@@ -81,13 +81,16 @@ img:hover {
   visibility: visible !important;
   display: block !important;
   padding: 0.75em 1em;
+  position: relative;       /* ensure it’s on its own stacking context */
+  z-index: 110 !important;  /* ensure links are above sidebar container’s base */
+  pointer-events: auto !important;
 }
 
-.md-nav__link:hover {
+.md-sidebar.md-nav__link:hover {
   background-color: #e8f0fe;
 }
 
-.md-nav__link--active {
+.md-sidebar.md-nav__link--active {
   background-color: #ffffff;
   border-left: 4px solid #0f62fe;
 }
