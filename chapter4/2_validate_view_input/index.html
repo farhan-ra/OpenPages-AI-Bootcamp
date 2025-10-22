@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://farhan-ra.github.io/Openpages-AI-Bootcamp/chapter4/2_validate_view_input/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Validate the View Input - OpenPages AI Bootcamp</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">OpenPages AI Bootcamp</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapter 1</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapter1/" class="dropdown-item">Overview</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapter 2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapter2/0_index/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter2/1_wxai/" class="dropdown-item">Creating the model</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter2/2_op_integration/" class="dropdown-item">Integrate the model in OpenPages</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter2/3_view_customisation/" class="dropdown-item">Making the AI feature available in OpenPages</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapter 3</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../chapter3/0_index/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter3/1_modify_op_object/" class="dropdown-item">Modifying an Object in OpenPages</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter3/2_set_up_and_integrate_ai/" class="dropdown-item">Set-up and Integrate AI Model</a>
+</li>
+                                    
+<li>
+    <a href="../../chapter3/3_bulk_analysis/" class="dropdown-item">Execute AI in Bulk</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Chapter 4</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../0_index/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../1_configure_view_input/" class="dropdown-item">Configuring a Custom View as Input for ML Models</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Validate the View Input</a>
+</li>
+                                    
+<li>
+    <a href="../3_prompt/" class="dropdown-item">Develop and Deploy Prompt</a>
+</li>
+                                    
+<li>
+    <a href="../4_integrate/" class="dropdown-item">Integrate ML Model and Make Available in View</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../1_configure_view_input/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../3_prompt/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#lab-32-set-up-and-integrate-ai-model" class="nav-link">Lab 3.2: Set-up and Integrate AI Model</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-set-up-openpages-logging-so-that-machine-learning-information-is-recorded" class="nav-link">1. Set-up OpenPages Logging so that Machine Learning Information is Recorded</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-deploy-a-dummy-ai-model" class="nav-link">2. Deploy a Dummy AI Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-integrating-deployed-dummy-ai-model-to-openpages" class="nav-link">3. Integrating Deployed Dummy AI Model to OpenPages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-add-the-dummy-model-to-a-view" class="nav-link">4. Add the Dummy Model to a View</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-test-the-dummy-model-in-openpages" class="nav-link">5. Test the Dummy Model in OpenPages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-access-the-openpages-logs-to-find-the-view-input-payload" class="nav-link">6. Access the OpenPages Logs to Find the View Input Payload</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lab-32-set-up-and-integrate-ai-model">Lab 3.2: Set-up and Integrate AI Model</h1>
+<p>With a view input created, we need to get the format the data will be sent to the AI model in so we can test our prompt with it, and confirm that it actually contains all the information we need to perform our AI analysis.</p>
+<hr />
+<h2 id="1-set-up-openpages-logging-so-that-machine-learning-information-is-recorded">1. Set-up OpenPages Logging so that Machine Learning Information is Recorded</h2>
+<ol>
+<li>
+<p>We will capture the data format by accessing the logs inside OpenPages, and so this must be configured correctly first. From the <strong>Administration ⚙️</strong> menu, go to <strong>System Configuration → Settings</strong>.</p>
+</li>
+<li>
+<p>By default, OpenPages obfuscates the request and response payloads for security. We must disable this - In settings, navigate to: 
+<code>/OpenPages/Applications/Common/Administration/Integrations/Logs/Obfuscation Disabled</code>. Ensure the value is set to <code>true</code>.
+<img alt="6_obfuscation_disabled" src="../images/6_obfuscation_disabled.png" /></p>
+</li>
+<li>
+<p>From the <strong>Administration ⚙️</strong> menu, go to <strong>Other → Logs</strong>.</p>
+</li>
+<li>
+<p>In <strong>System tracing options</strong> ensure only <strong>Machine Learning</strong> is checked. Click Save.
+<img alt="7_system_tracing_options" src="../images/7_system_tracing_options.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="2-deploy-a-dummy-ai-model">2. Deploy a Dummy AI Model</h2>
+<ol>
+<li>We need extract the exact payload of our view that OpenPages sends to watsonx.ai. To do this, we need to configure an AI insight trigger that calls our input view. We can achieve this by deploying a dummy AI model that calls our view input, into <strong>another</strong> view that a user will interact with the AI in. The payload will be sent to the dummy AI model. </li>
+</ol>
+<p>In watsonx.ai, deploy a prompt template with the following:</p>
+<pre><code>This is a dummy AI model. For the following input:
+{objectJson}
+Generate the word &quot;Yes&quot;.
+</code></pre>
+<hr />
+<h2 id="3-integrating-deployed-dummy-ai-model-to-openpages">3. Integrating Deployed Dummy AI Model to OpenPages</h2>
+<ol>
+<li>From the <strong>Administration</strong> menu, go to <strong>Integrations → Custom Machine Learning Models</strong>.</li>
+<li>Click <strong>New Model</strong> to begin configuring a new integration.  </li>
+<li>On the “New Model” screen:</li>
+<li>Enter <strong>Name</strong> and <strong>Label</strong> (e.g. <code>view_input_test</code>)  </li>
+<li>Select the <strong>AI Service Type</strong> (e.g. Watson Machine Learning on IBM Cloud)  </li>
+<li>Enter <strong>Access Parameters</strong> such as:  </li>
+<li><strong>Watson service type:</strong> <code>Watson Machine Learning on Cloud</code></li>
+<li><strong>Authentication URL:</strong> <code>https://iam.cloud.ibm.com/identity/token</code></li>
+<li><strong>API Key:</strong> Retrieve from IBM Cloud </li>
+<li><strong>Base Deployment URL:</strong> <code>https://us-south.ml.cloud.ibm.com/ml/v4</code></li>
+<li><strong>Deployment ID:</strong> Retrieve from dummy AI model deployment space on watsonx.ai</li>
+<li><strong>Space ID:</strong>  Retrieve from model/prompt template deployment on watsonx.ai</li>
+<li><strong>API version:</strong> <code>2021-05-01</code>  </li>
+<li>
+<p>Click <strong>Test Connection</strong> to verify connectivity  </p>
+</li>
+<li>
+<p>Set the <strong>Input type</strong> as view definition and select the appropriate object type (Risk Assessment).
+<img alt="8_dummy_model_inputs" src="../images/8_dummy_model_inputs.png" /></p>
+</li>
+<li>
+<p>For <strong>Outputs</strong>, select <strong>Insight type</strong> as display only with dummy text for the output label and JSONata string.
+<img alt="9_dummy_model_outputs" src="../images/9_dummy_model_outputs.png" /></p>
+</li>
+<li>
+<p>Add a suitable description and customise the style to your choosing in <strong>Guidance</strong>. Save the model.
+<img alt="10_dummy_model_guidance" src="../images/10_dummy_model_guidance.png" /></p>
+</li>
+</ol>
+<hr />
+<h2 id="4-add-the-dummy-model-to-a-view">4. Add the Dummy Model to a View</h2>
+<ol>
+<li>
+<p>Navigate to the relevant object view (Risk Assessment) to add the AI model we deployed.</p>
+</li>
+<li>
+<p>Add a new <strong>View AI Insights</strong> button, adding a suitable label and the dummy AI model for <strong>Select AI model integration</strong>. Select the view created in Lab 3.1 for <strong>Select a view to send to the model</strong>.
+<img alt="11_add_dummy_model_to_view" src="../images/11_add_dummy_model_to_view.png" /></p>
+</li>
+<li>
+<p>Publish the view</p>
+</li>
+</ol>
+<hr />
+<h2 id="5-test-the-dummy-model-in-openpages">5. Test the Dummy Model in OpenPages</h2>
+<ol>
+<li>Find an example Risk Assessment, and run the Dummy Model in the area you placed in the previous step.
+<img alt="12_test_dummy_model" src="../images/12_test_dummy_model.png" /></li>
+</ol>
+<hr />
+<h2 id="6-access-the-openpages-logs-to-find-the-view-input-payload">6. Access the OpenPages Logs to Find the View Input Payload</h2>
+<ol>
+<li>
+<p>Now that the payload has been sent to watsonx.ai, we can track down the exact input by accessing the OpenPages logs. From the <strong>Administration ⚙️</strong> menu, go to <strong>Other → Logs</strong>.</p>
+</li>
+<li>
+<p>Launch the Log Collector. Only the <strong>Log Files</strong> option needs to be selected.</p>
+</li>
+<li>
+<p>Wait for the logging to complete. This could take a few minutes depending on what you have selected for System tracing options. That's why it is recommended only to select machine learning.
+<img alt="13_logging_in_progress" src="../images/13_logging_in_progress.png" /></p>
+</li>
+<li>
+<p>Once the logging is complete, download the file.
+<img alt="14_logging_downloaded" src="../images/14_logging_downloaded.png" /></p>
+</li>
+<li>
+<p>Unzip the archive and navigate to <code>LogCollector_{date}_OPNodeServer1/OpenPages/aurora/logs/debug/OpenPagesNodeServerServer1-machinelearning.log</code></p>
+</li>
+<li>
+<p>This file contains detailed entries for each AI interaction, including the constructed prompt, the JSON payload, and the LLM’s response.Look for the line that contains a request corresponding to the time you clicked the AI button. 
+<img alt="15_logging_request_record.png" src="images/15_logging_request_record.png.png" /></p>
+</li>
+<li>
+<p>The payload sent to your model is then the value against the <code>objectJson</code> key.
+<img alt="16_logging_objectjson.png" src="images/16_logging_objectjson.png.png" /></p>
+</li>
+<li>
+<p>Here is an example of the payload:</p>
+</li>
+</ol>
+<pre>{
+    "guidance": {
+        "": "",
+        "incompletedRequiredItems": [],
+        "incompleteOptionalItems": [],
+        "completedItems": [
+            "Description",
+            "Name"
+        ]
+    },
+    "objectTypeLabel": "Risk Assessment",
+    "Related Information": {
+        "Tab Group-0000": {
+            "Process Risks": {
+                "relationshipType": "descendants",
+                "objectTypeName": "SOXRisk",
+                "relatedObjects": []
+            },
+            "Issue Summary": {
+                "relationshipType": "descendants",
+                "objectTypeName": "SOXIssue",
+                "relatedObjects": []
+            },
+            "Direct Risks": {
+                "relationshipType": "children",
+                "objectTypeName": "SOXRisk",
+                "relatedObjects": [
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Risk Assessment and Treatment Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111040,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-001"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Security Policy Risk",
+                        "Residual Risk Rating": "Medium",
+                        "id": 111042,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-002"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Organization Security Risk",
+                        "Residual Risk Rating": "High",
+                        "id": 111044,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-003"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Asset and Information Management Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111046,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-004"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Human Resource Security Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111048,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-005"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Low",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Physical and Environmental Security Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111050,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-006"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Operations Management Risk",
+                        "Residual Risk Rating": "Medium",
+                        "id": 111052,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-007"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Access Control Risk",
+                        "Residual Risk Rating": "High",
+                        "id": 111054,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-008"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Application Security Risk",
+                        "Residual Risk Rating": "Very High",
+                        "id": 111056,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-009"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Incident Event and Communications Management Risk",
+                        "Residual Risk Rating": "Medium",
+                        "id": 111058,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-010"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Business Resiliency Risk",
+                        "Residual Risk Rating": "Very High",
+                        "id": 111060,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-011"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Low",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Compliance Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111062,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-012"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Low",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "End User Device Security Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111064,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-013"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Network Security Risk",
+                        "Residual Risk Rating": "Medium",
+                        "id": 111066,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-014"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "High",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Privacy Risk",
+                        "Residual Risk Rating": "High",
+                        "id": 111068,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-015"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Threat Management Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111070,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-016"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Medium",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Server Security Risk",
+                        "Residual Risk Rating": "Medium",
+                        "id": 111072,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-017"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Inherent Risk Rating": "Low",
+                        "Owner": "OpenPagesAdministrator",
+                        "Description": "Cloud Hosting Risk",
+                        "Residual Risk Rating": "Low",
+                        "id": 111074,
+                        "parentId": 111037,
+                        "Name": "RSK-SA-018"
+                    }
+                ]
+            },
+            "Controls": {
+                "relationshipType": "descendants",
+                "objectTypeName": "SOXControl",
+                "relatedObjects": [
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "A comprehensive Risk Governance Plan is in Place including Policies, Procedures, and Internal Controls",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Not Determined",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111077,
+                        "parentId": 111040,
+                        "Name": "CTRL-SA-001"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "An Information Security Policy Program has been established and implemented based on industry accepted standards and practices",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111079,
+                        "parentId": 111042,
+                        "Name": "CTRL-SA-002"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Local and Site-specific security risk processes are implemented to adequately manage organizational security risk",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Ineffective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111081,
+                        "parentId": 111044,
+                        "Name": "CTRL-SA-003"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "The Asset Inventory or CMDB is updated periodically and Asset Information is adquate and complete",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Ineffective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111083,
+                        "parentId": 111046,
+                        "Name": "CTRL-SA-004"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "A human resource policy is approved by management, communicated to all constituents, and includes comprehensive background checks.",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111085,
+                        "parentId": 111048,
+                        "Name": "CTRL-SA-005"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "A Physical Security program including physical access and environmental controls is implemented and approved by Management.",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111087,
+                        "parentId": 111050,
+                        "Name": "CTRL-SA-006"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Operating procedures are documented, maintained, and made available to all users",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111089,
+                        "parentId": 111052,
+                        "Name": "CTRL-SA-007"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Access Control Policy is implemented and preventative controls are in place to prevent access to client data.",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111091,
+                        "parentId": 111054,
+                        "Name": "CTRL-SA-008"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Applicatoins that transmit, process, or store scoped data have been reviewed by security experts",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111093,
+                        "parentId": 111056,
+                        "Name": "CTRL-SA-009"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Incidents are properly documented, managed, and addressed in accordance with SLA's",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111095,
+                        "parentId": 111058,
+                        "Name": "CTRL-SA-010"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "There is an established business resiliency program that has been approved by management, communicated to appropriate constituents, and an owner to maintain and review the program",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111097,
+                        "parentId": 111060,
+                        "Name": "CTRL-SA-011"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "There are policies and procedures to ensure compliance with applicable legislative, regulatory and contractual requirements including intellectual property rights on business processes or information technology software products",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111099,
+                        "parentId": 111062,
+                        "Name": "CTRL-SA-012"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "End user device security configuration standards are reviewed and/or updated at least annually to account for any changes in environment, available security features and/or best practices",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111101,
+                        "parentId": 111064,
+                        "Name": "CTRL-SA-013"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Reviews are performed to validate compliance with documented standards at least annually",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111103,
+                        "parentId": 111066,
+                        "Name": "CTRL-SA-014"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Client Data is scoped collected, transmitted, processed, or stored that can be classified as non-public information (NPI), personally identifiable information (PII), or personally identifiable financial information",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111105,
+                        "parentId": 111068,
+                        "Name": "CTRL-SA-015"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "The anti-malware policy or program includes defined operating systems that require antivirus",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111107,
+                        "parentId": 111070,
+                        "Name": "CTRL-SA-016"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "Server security configuration reviews are performed regularly to validate compliance with documented standards",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111109,
+                        "parentId": 111072,
+                        "Name": "CTRL-SA-017"
+                    },
+                    {
+                        "Status": "Awaiting Assessment",
+                        "Description": "An Internet-accessible self-service portal is available that allows clients to configure security settings and view access logs, security events and alerts",
+                        "Design Effectiveness": "Effective",
+                        "Operating Effectiveness": "Effective",
+                        "Control Owner": "OpenPagesAdministrator",
+                        "id": 111111,
+                        "parentId": 111074,
+                        "Name": "CTRL-SA-018"
+                    }
+                ]
+            },
+            "Attachments": {
+                "relationshipType": "children",
+                "objectTypeName": "SOXDocument",
+                "relatedObjects": []
+            }
+        }
+    },
+    "name": "1-TPRM-VRA-SCA-BigTech",
+    "objectTypeName": "RiskAssessment",
+    "header": {
+        "Status": "Awaiting Assessment",
+        "Type": "Qualitative",
+        "Number of Issues": 0
+    },
+    "RCSA Dates": {
+        "group-dates": {
+            "Next Assessment Date": "",
+            "Start Date": "6/18/2022",
+            "End Date": "7/16/2022",
+            "Frequency": "Quarterly"
+        }
+    },
+    "Overview": {
+        "Guidance": "",
+        "Description": "Vendor Standardized Risk and Control Assessment",
+        "group-owners": {
+            "Status": "Awaiting Assessment",
+            "Risk Assessment Type": "Third Party",
+            "Type": "Qualitative",
+            "Domain": "Compliance",
+            "Assessor": "Vicky Manfred [vendormanager]",
+            "Reviewer": "Vicky Manfred [vendormanager]"
+        },
+        "Name": "1-TPRM-VRA-SCA-BigTech"
+    },
+    "id": "111037",
+    "Processes In Scope": {
+        "Scoping": "Scope the Assessment by associating to processes.\\nAll child risks of a process will be then deemdeed to be in scope and shown in the grids below",
+        "Tab Group-0001": {
+            "Processes": {
+                "relationshipType": "children",
+                "objectTypeName": "SOXProcess",
+                "relatedObjects": []
+            }
+        }
+    }
+}</pre>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
