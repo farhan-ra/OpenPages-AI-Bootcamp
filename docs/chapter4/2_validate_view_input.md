@@ -14,13 +14,13 @@ With a view input created, we need to get the format the data will be sent to th
 1. We will capture the data format by accessing the logs inside OpenPages, and so this must be configured correctly first. From the **Administration ⚙️** menu, go to **System Configuration → Settings**.
 
 2. By default, OpenPages obfuscates the request and response payloads for security. We must disable this - In settings, navigate to: 
-/OpenPages/Applications/Common/Administration/Integrations/Logs/Obfuscation Disabled. Ensure the value is set to `true`.
-[image placeholder]
+`/OpenPages/Applications/Common/Administration/Integrations/Logs/Obfuscation Disabled`. Ensure the value is set to `true`.
+![6_obfuscation_disabled](images/6_obfuscation_disabled.png)
 
 3. From the **Administration ⚙️** menu, go to **Other → Logs**.
 
 4. In **System tracing options** ensure only **Machine Learning** is checked. Click Save.
-[image placeholder] 
+![7_system_tracing_options](images/7_system_tracing_options.png)
 
 ---
 
@@ -56,13 +56,13 @@ Generate the word "Yes".
 - Click **Test Connection** to verify connectivity  
 
 4. Set the **Input type** as view definition and select the appropriate object type (Risk Assessment).
-[image placeholder]
+![8_dummy_model_inputs](images/8_dummy_model_inputs.png)
 
 2. For **Outputs**, select **Insight type** as display only with dummy text for the output label and JSONata string.
-[image placeholder]
+![9_dummy_model_outputs](images/9_dummy_model_outputs.png)
 
 3. Add a suitable description and customise the style to your choosing in **Guidance**. Save the model.
-[image placeholder]
+![10_dummy_model_guidance](images/10_dummy_model_guidance.png)
 
 ---
 
@@ -71,7 +71,7 @@ Generate the word "Yes".
 1. Navigate to the relevant object view (Risk Assessment) to add the AI model we deployed.
 
 2. Add a new **View AI Insights** button, adding a suitable label and the dummy AI model for **Select AI model integration**. Select the view created in Lab 3.1 for **Select a view to send to the model**.
-[image placeholder]
+![11_add_dummy_model_to_view](images/11_add_dummy_model_to_view.png)
 
 3. Publish the view
 
@@ -80,7 +80,7 @@ Generate the word "Yes".
 ## 5. Test the Dummy Model in OpenPages
 
 1. Find an example Risk Assessment, and run the Dummy Model in the area you placed in the previous step.
-[image placeholder]
+![12_test_dummy_model](images/12_test_dummy_model.png)
 
 ---
 
@@ -91,16 +91,18 @@ Generate the word "Yes".
 2. Launch the Log Collector. Only the **Log Files** option needs to be selected.
 
 3. Wait for the logging to complete. This could take a few minutes depending on what you have selected for System tracing options. That's why it is recommended only to select machine learning.
-[image placeholder]
+![13_logging_in_progress](images/13_logging_in_progress.png)
 
 4. Once the logging is complete, download the file.
+![14_logging_downloaded](images/14_logging_downloaded.png)
 
-5. Unzip the archive and navigate to LogCollector_{date}_OPNodeServer1/OpenPages/aurora/logs/debug/OpenPagesNodeServerServer1-machinelearning.log
+5. Unzip the archive and navigate to `LogCollector_{date}_OPNodeServer1/OpenPages/aurora/logs/debug/OpenPagesNodeServerServer1-machinelearning.log`
 
 6. This file contains detailed entries for each AI interaction, including the constructed prompt, the JSON payload, and the LLM’s response.Look for the line that contains a request corresponding to the time you clicked the AI button. 
-[image placeholder]
+![15_logging_request_record.png](images/15_logging_request_record.png.png)
 
 7. The payload sent to your model is then the value against the `objectJson` key.
+![16_logging_objectjson.png](images/16_logging_objectjson.png.png)
 
 8. Here is an example of the payload:
 

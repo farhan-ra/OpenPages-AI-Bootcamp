@@ -25,10 +25,17 @@ Each of these are different objects but would have relationships.
   - **Label:** Add a suitable lavel
   - **Type:** `Task` 
   - **Enabled:** ✅ 
-[placeholder for images]
+![1_copy_view](images/1_copy_view.png)
 
 3. Go to your new view and add in the relevant object inputs. These are best brought in as grids so that multiple fields for each object can be input into the ML model. Where the relationship type is not direct (either parent/child), select all relevant relationship paths. An example of this is shown below, where **Processes** are a directly related object but **Proces Risks** (**Descendants** relationship type) are not therefore the relationship types must be selected. 
-[placeholder for images]
+![2_processes](images/2_processes.png)
+
+![3_processes_fields](images/3_processes_fields.png)
+
+![4_process_risks](images/4_process_risks.png)
+
+![5_process_risks_fields](images/5_process_risks_fields.png)
+
 Do the same for:
 - Direct Risks; the **Children** relationship type for the **Risk** object (selecting Name, Description, Inherent Risk Rating, Residual Risk Rating, Owner, Status)
 - Controls (selecting Name, Description, Design Effectiveness, Operating Effeftiveness, Control Owner, Status)

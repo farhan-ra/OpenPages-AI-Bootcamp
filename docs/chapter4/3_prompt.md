@@ -12,7 +12,7 @@ Now knowing the exact input type, we can create a prompt for our desired output.
 ## 1. Set Up and Deploy the prompt in Prompt Lab
 
 1. As per Lab 1.1, develop and deploy the prompt. The only difference is the input data will be the json object we identified in the last step, and the prompt template variable must be `objectJson`
-[prompt lab screenshot]
+![17_prompt_lab](images/17_prompt_lab.png)
 
 Here is an example prompt:
 
