@@ -39,7 +39,7 @@ img {
   height: auto;
 }
 img:hover {
-  transform: scale(1.4);
+  transform: scale(1.3);
   z-index: 10;
   position: relative;
   border: 1px solid #8d8d8d;
@@ -63,6 +63,8 @@ img:hover {
   z-index: 100;
   box-sizing: border-box;
   padding-top: 1rem;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 .md-sidebar__scrollwrap {
@@ -109,33 +111,37 @@ img:hover {
 }
 
 /* Responsive behavior: hide sidebar on small screens */
-@media (max-width: 960px) {
-  .md-sidebar--primary {
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-    pointer-events: auto;
-  }
 
-  body.md-sidebar--hidden .md-sidebar--primary {
-    transform: translateX(-280px);
-    pointer-events: none;
-  }
+.md-sidebar--primary {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+}
 
-  .md-main {
-    margin-left: 0;
-  }
+body.md-sidebar--hidden .md-sidebar--primary {
+  transform: translateX(-280px);
+  pointer-events: none;
+}
 
-  #sidebar-toggle {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1100;
-    background-color: #0f62fe;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-  }
+.md-main {
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+body.md-sidebar--hidden .md-main {
+  margin-left: 0;
+}
+
+#sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background-color: #0f62fe;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
 }
