@@ -28,7 +28,7 @@ After deploying the model, the last remaining step is integrating the ML model a
 
 ---
 
-## 5. Test the Model in OpenPages
+## 3. Test the Model in OpenPages
 
 1. Find an example Risk Assessment, and run the new Executive Summary Model in the area you placed in the previous step.
 ![21_test_ra_summary](images/21_test_ra_summary.png)
