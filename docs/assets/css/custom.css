@@ -66,7 +66,7 @@ a:hover {
 
 /* Images */
 img {
-  max-width: 80%;       /* Reduce from 100% to 80% of container width */
+  width: 80%;       /* Reduce from 100% to 80% of container width */
   height: auto;
   display: block;
   margin: 1rem auto;    /* Center images nicely */
