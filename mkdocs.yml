@@ -48,3 +48,4 @@ extra_css:
 extra_javascript:
   - assets/js/sidebar-toggle.js
   - assets/js/scroll-flush-top.js
+  - assets/js/toc-active-middle.js

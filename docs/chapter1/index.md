@@ -6,7 +6,7 @@
 
 ---
 
-## 1.1 What Is a Prompt?
+## 1. What Is a Prompt?
 
 A **prompt** is a textual instruction (plus context and variables) you send to a foundation model to elicit desired output.  
 A well‑designed prompt includes:
@@ -19,6 +19,6 @@ A well‑designed prompt includes:
 
 ---
 
-## 1.2 PII Redaction Example
+## 2. PII Redaction Example
 
 Let's jump over to watsonx.ai and start prompting!
