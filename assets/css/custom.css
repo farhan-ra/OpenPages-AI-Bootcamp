@@ -56,7 +56,7 @@ img:hover {
   border-right: 1px solid #e0e0e0;
   width: 280px;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: visible;
   position: fixed;
   top: 0;
   left: 0;
@@ -64,12 +64,16 @@ img:hover {
   box-sizing: border-box;
   padding-top: 1rem;
   transform: translateX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 .md-sidebar__scrollwrap {
   height: 100%;
   overflow-y: auto;
+}
+
+.md-nav__title {
+  display: none !important;
 }
 
 /* Navigation links */
@@ -101,16 +105,10 @@ img:hover {
   color: #6f6f6f;
 }
 
-/* Main content area */
-.md-main {
-  margin-left: 280px;
-  padding: 2rem;
-  transition: margin-left 0.3s ease;
-  position: relative;
-  z-index: 0;
+.md-nav__list {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
 }
-
-/* Responsive behavior: hide sidebar on small screens */
 
 .md-sidebar--primary {
   transform: translateX(0);
@@ -119,17 +117,18 @@ img:hover {
 }
 
 body.md-sidebar--hidden .md-sidebar--primary {
-  transform: translateX(-280px);
-  pointer-events: none;
+  transform: translateX(calc(-280px + 60px)); /* Move sidebar left by full width minus thin slice */
+  width: 280px; /* Keep full width so content inside remains, but shifted */
 }
 
 .md-main {
   margin-left: 280px;
   transition: margin-left 0.3s ease;
+  position: relative;
 }
 
 body.md-sidebar--hidden .md-main {
-  margin-left: 0;
+  margin-left: 60px;
 }
 
 #sidebar-toggle {
@@ -142,26 +141,25 @@ body.md-sidebar--hidden .md-main {
   transition: transform 0.3s ease;
 }
 
-#sidebar-toggle {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25rem;
-  margin-right: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.custom-sidebar-header {
+/* .custom-sidebar-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  background-color: #161616;
+  justify-content: space-between; 
+  background-color: #f4f4f4;
   color: #ffffff;
   padding: 0.75rem 1rem;
   font-weight: 600;
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 101;
+  z-index: 200;
+  border-bottom: 1px solid #f4f4f4;
+  overflow: hidden; 
+} */
+
+/* targets the HTML element with the attribute id="sidebar-arrow" in sidebar-toggle.js. */
+#sidebar-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
+
