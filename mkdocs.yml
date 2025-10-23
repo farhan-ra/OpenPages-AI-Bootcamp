@@ -14,11 +14,12 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   features:
-    - navigation.expand
-    - navigation.sections
+    # - navigation.expand
+    # - navigation.sections
     - search.highlight
     - search.share
     - content.code.copy
+    - toc.integrate
 
 nav:
   - Home: index.md
@@ -46,3 +47,4 @@ extra_css:
 
 extra_javascript:
   - assets/js/sidebar-toggle.js
+  - assets/js/scroll-flush-top.js
