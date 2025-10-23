@@ -10,7 +10,7 @@ body {
   line-height: 1.5;  
 }
 
-/* Headings */
+/* Headings
 h1 { 
   font-size: 0.1rem;
   font-weight: 600;
@@ -40,10 +40,10 @@ h6 {
   font-size: 0.1rem;
   font-weight: 600;
   color: #161616;
-}
+} */
 
 p {
-  font-size: 0.75rem; /* navbar and body text */
+  font-size: 0.75rem; /* body text */
   line-height: 1.5;
 }
 
@@ -113,7 +113,7 @@ img:hover {
 }
 
 /* Navigation links */
-.md-nav__link {
+.md-nav__link { /* navbar text */
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   color: #161616 !important;
@@ -211,3 +211,4 @@ body.md-sidebar--hidden .md-main {
 html {
   scroll-behavior: smooth;
 }
+
