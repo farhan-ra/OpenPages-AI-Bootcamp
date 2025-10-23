@@ -166,6 +166,30 @@ body.md-sidebar--hidden .md-sidebar--primary {
   width: 280px; /* Keep full width so content inside remains, but shifted */
 }
 
+/* When sidebar is closed */
+body.md-sidebar--hidden .md-nav__link {
+  color: transparent !important;   /* Hide the text */
+  pointer-events: none;             /* Disable clicking on links */
+}
+
+/* Hide text titles in the sidebar header if needed */
+/* body.md-sidebar--hidden .sidebar-title {
+  display: none;
+} */
+
+/* Remove active highlight shading when sidebar is closed */
+body.md-sidebar--hidden .md-nav__link--active {
+  background-color: transparent !important;
+  border-left: none !important;
+}
+
+/* Keep toggle button visible and clickable */
+body.md-sidebar--hidden #sidebar-toggle {
+  color: #161616 !important;
+  pointer-events: auto;
+  opacity: 1; /* Ensure fully visible */
+}
+
 .md-main {
   margin-left: 280px;
   transition: margin-left 0.3s ease;

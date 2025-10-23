@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     border: none;
     color: #161616;
     cursor: pointer;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
     transition: transform 0.3s ease;
   `;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Create arrow inside button
   const arrow = document.createElement('span');
   arrow.id = 'sidebar-arrow';
-  arrow.textContent = '<';
+  arrow.textContent = '‹';
   arrow.style.transition = 'transform 0.3s ease';
 
   toggleBtn.appendChild(arrow);
