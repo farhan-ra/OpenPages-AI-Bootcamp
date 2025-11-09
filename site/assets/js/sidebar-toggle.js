@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.createElement('div');
   header.className = 'custom-sidebar-header';
   header.style.cssText = `
-    background-color: #161616;
-    color: #fff;
-    padding: 0.75rem 1rem;
+    background-color: #f4f4f4;
+    color: #161616;
+    padding: 0.75rem 0.3rem 0.75rem 1rem;
     font-weight: 600;
     font-size: 1rem;
     display: flex;
@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     position: sticky;
     top: 0;
     z-index: 200;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #f4f4f4;
+    justify-content: space-between; 
   `;
 
   // Create toggle button
@@ -26,17 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBtn.style.cssText = `
     background: none;
     border: none;
-    color: #fff;
+    color: #161616;
     cursor: pointer;
-    font-size: 1.25rem;
-    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
     transition: transform 0.3s ease;
   `;
 
   // Create arrow inside button
   const arrow = document.createElement('span');
   arrow.id = 'sidebar-arrow';
-  arrow.textContent = '←';
+  arrow.textContent = '‹';
   arrow.style.transition = 'transform 0.3s ease';
 
   toggleBtn.appendChild(arrow);
@@ -45,10 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const titleSpan = document.createElement('span');
   titleSpan.className = 'sidebar-title';
   titleSpan.textContent = 'IBM OpenPages AI Bootcamp';
+  titleSpan.style.flexGrow = '1';
+  titleSpan.style.userSelect = 'none'; 
 
   // Append toggle and title to header
-  header.appendChild(toggleBtn);
   header.appendChild(titleSpan);
+  header.appendChild(toggleBtn);
 
   // Insert header as first child of sidebar
   sidebar.insertBefore(header, sidebar.firstChild);
