@@ -1,4 +1,4 @@
-# **OpenPages AI Bootcamp**
+# OpenPages AI Bootcamp
 
 Welcome to the **OpenPages AI Bootcamp**, a hands-on learning experience designed to help you harness the power of **IBM watsonx.ai** and **OpenPages 9.x** to automate risk management, control analysis, and data-driven decision-making.  
 
@@ -6,9 +6,9 @@ This bootcamp combines guided tutorials, real-world use cases, and lab exercises
 
 ---
 
-## **Bootcamp Overview**
+## Bootcamp Overview
 
-### **Chapter 1: Prompt Engineering & AI Foundations**
+### Chapter 1: Prompt Engineering & AI Foundations
 
 **Goal:**  
 - Understand prompt engineering basics  
@@ -18,7 +18,7 @@ You’ll explore the fundamentals of prompt design and learn how to craft effect
 
 ---
 
-### **Chapter 2: Lab 1 — Classifying Risks with AI**
+### Chapter 2: Lab 1 — Classifying Risks with AI
 
 In this lab, you’ll learn how to configure and use the **Custom Machine Learning Models** feature in OpenPages to automatically classify risk descriptions into a two-level taxonomy.  
 
@@ -35,7 +35,7 @@ By the end of this lab, your OpenPages environment will be able to automatically
 
 ---
 
-### **Chapter 3: Lab 2 — Conducting AI Analysis at Scale**
+### Chapter 3: Lab 2 — Conducting AI Analysis at Scale
 
 This lab shows how to conduct advanced AI-driven analysis — the **5W analysis** (Who, What, When, Where, Why) — on control descriptions, and how to scale this process across large datasets through automation.  
 
@@ -48,7 +48,7 @@ You’ll learn how to build a seamless workflow that enables continuous, intelli
 
 ---
 
-### **Chapter 4: Lab 3 — Creating Custom Input Sources for AI Analysis**
+### Chapter 4: Lab 3 — Creating Custom Input Sources for AI Analysis
 
 In this advanced lab, you’ll create **custom views** that pull together data from multiple OpenPages objects to enable richer, more contextual AI analysis.  
 
@@ -62,7 +62,7 @@ This lab helps you design flexible, powerful input sources that expand the reach
 
 ---
 
-## **Who This Bootcamp Is For**
+## Who This Bootcamp Is For
 
 This bootcamp is ideal for:  
 - Risk and compliance professionals exploring AI integration  
@@ -72,7 +72,7 @@ This bootcamp is ideal for:
 
 ---
 
-## **By the End of the Bootcamp**
+## By the End of the Bootcamp
 
 You’ll have the knowledge and tools to:  
 - Integrate watsonx.ai models directly into OpenPages  
